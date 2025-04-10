@@ -1,8 +1,5 @@
  // NumberOfConfigBits: 0
 module N_term_single2_switch_matrix
-    #(
-        parameter NoConfigBits=0
-    )
     (
         input N1END0,
         input N1END1,
@@ -117,58 +114,6 @@ parameter VCC = 1'b1;
 parameter VDD0 = 1'b1;
 parameter VDD = 1'b1;
 
-wire[1-1:0] S1BEG0_input;
-wire[1-1:0] S1BEG1_input;
-wire[1-1:0] S1BEG2_input;
-wire[1-1:0] S1BEG3_input;
-wire[1-1:0] S2BEG0_input;
-wire[1-1:0] S2BEG1_input;
-wire[1-1:0] S2BEG2_input;
-wire[1-1:0] S2BEG3_input;
-wire[1-1:0] S2BEG4_input;
-wire[1-1:0] S2BEG5_input;
-wire[1-1:0] S2BEG6_input;
-wire[1-1:0] S2BEG7_input;
-wire[1-1:0] S2BEGb0_input;
-wire[1-1:0] S2BEGb1_input;
-wire[1-1:0] S2BEGb2_input;
-wire[1-1:0] S2BEGb3_input;
-wire[1-1:0] S2BEGb4_input;
-wire[1-1:0] S2BEGb5_input;
-wire[1-1:0] S2BEGb6_input;
-wire[1-1:0] S2BEGb7_input;
-wire[1-1:0] S4BEG0_input;
-wire[1-1:0] S4BEG1_input;
-wire[1-1:0] S4BEG2_input;
-wire[1-1:0] S4BEG3_input;
-wire[1-1:0] S4BEG4_input;
-wire[1-1:0] S4BEG5_input;
-wire[1-1:0] S4BEG6_input;
-wire[1-1:0] S4BEG7_input;
-wire[1-1:0] S4BEG8_input;
-wire[1-1:0] S4BEG9_input;
-wire[1-1:0] S4BEG10_input;
-wire[1-1:0] S4BEG11_input;
-wire[1-1:0] S4BEG12_input;
-wire[1-1:0] S4BEG13_input;
-wire[1-1:0] S4BEG14_input;
-wire[1-1:0] S4BEG15_input;
-wire[1-1:0] SS4BEG0_input;
-wire[1-1:0] SS4BEG1_input;
-wire[1-1:0] SS4BEG2_input;
-wire[1-1:0] SS4BEG3_input;
-wire[1-1:0] SS4BEG4_input;
-wire[1-1:0] SS4BEG5_input;
-wire[1-1:0] SS4BEG6_input;
-wire[1-1:0] SS4BEG7_input;
-wire[1-1:0] SS4BEG8_input;
-wire[1-1:0] SS4BEG9_input;
-wire[1-1:0] SS4BEG10_input;
-wire[1-1:0] SS4BEG11_input;
-wire[1-1:0] SS4BEG12_input;
-wire[1-1:0] SS4BEG13_input;
-wire[1-1:0] SS4BEG14_input;
-wire[1-1:0] SS4BEG15_input;
 
  //The configuration bits (if any) are just a long shift register
  //This shift register is padded to an even number of flops/latches
