@@ -55,24 +55,14 @@ module RegFile
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
-        output [FrameBitsPerRow -1:0] FrameData_O,
-        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
-        output [MaxFramesPerCol -1:0] FrameStrobe_O
+        input [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow-1:0] FrameData_O,
+        input [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
+        output [MaxFramesPerCol-1:0] FrameStrobe_O
     //global
 );
  //signal declarations
  //BEL ports (e.g., slices)
-wire D0;
-wire D1;
-wire D2;
-wire D3;
-wire W_ADR0;
-wire W_ADR1;
-wire W_ADR2;
-wire W_ADR3;
-wire W_ADR4;
-wire W_en;
 wire A_ADR0;
 wire A_ADR1;
 wire A_ADR2;
@@ -83,6 +73,16 @@ wire B_ADR1;
 wire B_ADR2;
 wire B_ADR3;
 wire B_ADR4;
+wire D0;
+wire D1;
+wire D2;
+wire D3;
+wire W_ADR0;
+wire W_ADR1;
+wire W_ADR2;
+wire W_ADR3;
+wire W_ADR4;
+wire W_en;
 wire AD0;
 wire AD1;
 wire AD2;
@@ -1621,34 +1621,13 @@ RegFile_ConfigMem
 
  //BEL component instantiations
 RegFile_32x4 Inst_RegFile_32x4 (
-    .D0(D0),
-    .D1(D1),
-    .D2(D2),
-    .D3(D3),
-    .W_ADR0(W_ADR0),
-    .W_ADR1(W_ADR1),
-    .W_ADR2(W_ADR2),
-    .W_ADR3(W_ADR3),
-    .W_ADR4(W_ADR4),
+    .A_ADR({A_ADR4, A_ADR3, A_ADR2, A_ADR1, A_ADR0}),
+    .B_ADR({B_ADR4, B_ADR3, B_ADR2, B_ADR1, B_ADR0}),
+    .D({D3, D2, D1, D0}),
+    .W_ADR({W_ADR4, W_ADR3, W_ADR2, W_ADR1, W_ADR0}),
     .W_en(W_en),
-    .A_ADR0(A_ADR0),
-    .A_ADR1(A_ADR1),
-    .A_ADR2(A_ADR2),
-    .A_ADR3(A_ADR3),
-    .A_ADR4(A_ADR4),
-    .B_ADR0(B_ADR0),
-    .B_ADR1(B_ADR1),
-    .B_ADR2(B_ADR2),
-    .B_ADR3(B_ADR3),
-    .B_ADR4(B_ADR4),
-    .AD0(AD0),
-    .AD1(AD1),
-    .AD2(AD2),
-    .AD3(AD3),
-    .BD0(BD0),
-    .BD1(BD1),
-    .BD2(BD2),
-    .BD3(BD3),
+    .AD({AD3, AD2, AD1, AD0}),
+    .BD({BD3, BD2, BD1, BD0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[2-1:0])
 );
@@ -1974,16 +1953,6 @@ RegFile_switch_matrix Inst_RegFile_switch_matrix (
     .WW4BEG3(WW4BEG[15]),
     .W6BEG0(W6BEG[10]),
     .W6BEG1(W6BEG[11]),
-    .D0(D0),
-    .D1(D1),
-    .D2(D2),
-    .D3(D3),
-    .W_ADR0(W_ADR0),
-    .W_ADR1(W_ADR1),
-    .W_ADR2(W_ADR2),
-    .W_ADR3(W_ADR3),
-    .W_ADR4(W_ADR4),
-    .W_en(W_en),
     .A_ADR0(A_ADR0),
     .A_ADR1(A_ADR1),
     .A_ADR2(A_ADR2),
@@ -1994,6 +1963,16 @@ RegFile_switch_matrix Inst_RegFile_switch_matrix (
     .B_ADR2(B_ADR2),
     .B_ADR3(B_ADR3),
     .B_ADR4(B_ADR4),
+    .D0(D0),
+    .D1(D1),
+    .D2(D2),
+    .D3(D3),
+    .W_ADR0(W_ADR0),
+    .W_ADR1(W_ADR1),
+    .W_ADR2(W_ADR2),
+    .W_ADR3(W_ADR3),
+    .W_ADR4(W_ADR4),
+    .W_en(W_en),
     .J2MID_ABa_BEG0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_BEG1(J2MID_ABa_BEG[1]),
     .J2MID_ABa_BEG2(J2MID_ABa_BEG[2]),

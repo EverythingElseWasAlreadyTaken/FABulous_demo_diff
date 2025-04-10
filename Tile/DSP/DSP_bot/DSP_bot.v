@@ -14,12 +14,12 @@ module DSP_bot
         output [7:0] N2BEGb,        //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
         output [15:0] N4BEG,        //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
         output [15:0] NN4BEG,        //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
-        output [9:0] bot2top,        //Port(Name=bot2top, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=10, Side=NORTH)
         input [3:0] S1END,        //Port(Name=S1END, IO=INPUT, XOffset=0, YOffset=1, WireCount=4, Side=NORTH)
         input [7:0] S2MID,        //Port(Name=S2MID, IO=INPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
         input [7:0] S2END,        //Port(Name=S2END, IO=INPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
         input [15:0] S4END,        //Port(Name=S4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
         input [15:0] SS4END,        //Port(Name=SS4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
+        output [9:0] bot2top,        //Port(Name=bot2top, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=10, Side=NORTH)
         input [17:0] top2bot,        //Port(Name=top2bot, IO=INPUT, XOffset=0, YOffset=1, WireCount=18, Side=NORTH)
  //Side.EAST
         output [3:0] E1BEG,        //Port(Name=E1BEG, IO=OUTPUT, XOffset=1, YOffset=0, WireCount=4, Side=EAST)
@@ -57,71 +57,71 @@ module DSP_bot
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
-        output [FrameBitsPerRow -1:0] FrameData_O,
-        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
-        output [MaxFramesPerCol -1:0] FrameStrobe_O
+        input [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow-1:0] FrameData_O,
+        input [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
+        output [MaxFramesPerCol-1:0] FrameStrobe_O
     //global
 );
  //signal declarations
  //BEL ports (e.g., slices)
-wire A7;
-wire A6;
-wire A5;
-wire A4;
-wire A3;
-wire A2;
-wire A1;
 wire A0;
-wire B7;
-wire B6;
-wire B5;
-wire B4;
-wire B3;
-wire B2;
-wire B1;
+wire A1;
+wire A2;
+wire A3;
+wire A4;
+wire A5;
+wire A6;
+wire A7;
 wire B0;
-wire C19;
-wire C18;
-wire C17;
-wire C16;
-wire C15;
-wire C14;
-wire C13;
-wire C12;
-wire C11;
-wire C10;
-wire C9;
-wire C8;
-wire C7;
-wire C6;
-wire C5;
-wire C4;
-wire C3;
-wire C2;
-wire C1;
+wire B1;
+wire B2;
+wire B3;
+wire B4;
+wire B5;
+wire B6;
+wire B7;
 wire C0;
+wire C1;
+wire C2;
+wire C3;
+wire C4;
+wire C5;
+wire C6;
+wire C7;
+wire C8;
+wire C9;
+wire C10;
+wire C11;
+wire C12;
+wire C13;
+wire C14;
+wire C15;
+wire C16;
+wire C17;
+wire C18;
+wire C19;
 wire clr;
-wire Q19;
-wire Q18;
-wire Q17;
-wire Q16;
-wire Q15;
-wire Q14;
-wire Q13;
-wire Q12;
-wire Q11;
-wire Q10;
-wire Q9;
-wire Q8;
-wire Q7;
-wire Q6;
-wire Q5;
-wire Q4;
-wire Q3;
-wire Q2;
-wire Q1;
 wire Q0;
+wire Q1;
+wire Q2;
+wire Q3;
+wire Q4;
+wire Q5;
+wire Q6;
+wire Q7;
+wire Q8;
+wire Q9;
+wire Q10;
+wire Q11;
+wire Q12;
+wire Q13;
+wire Q14;
+wire Q15;
+wire Q16;
+wire Q17;
+wire Q18;
+wire Q19;
  //Jump wires
 wire[4-1:0] J2MID_ABa_BEG;
 wire[4-1:0] J2MID_CDa_BEG;
@@ -1652,63 +1652,11 @@ DSP_bot_ConfigMem
 
  //BEL component instantiations
 MULADD Inst_MULADD (
-    .A7(A7),
-    .A6(A6),
-    .A5(A5),
-    .A4(A4),
-    .A3(A3),
-    .A2(A2),
-    .A1(A1),
-    .A0(A0),
-    .B7(B7),
-    .B6(B6),
-    .B5(B5),
-    .B4(B4),
-    .B3(B3),
-    .B2(B2),
-    .B1(B1),
-    .B0(B0),
-    .C19(C19),
-    .C18(C18),
-    .C17(C17),
-    .C16(C16),
-    .C15(C15),
-    .C14(C14),
-    .C13(C13),
-    .C12(C12),
-    .C11(C11),
-    .C10(C10),
-    .C9(C9),
-    .C8(C8),
-    .C7(C7),
-    .C6(C6),
-    .C5(C5),
-    .C4(C4),
-    .C3(C3),
-    .C2(C2),
-    .C1(C1),
-    .C0(C0),
+    .A({A7, A6, A5, A4, A3, A2, A1, A0}),
+    .B({B7, B6, B5, B4, B3, B2, B1, B0}),
+    .C({C19, C18, C17, C16, C15, C14, C13, C12, C11, C10, C9, C8, C7, C6, C5, C4, C3, C2, C1, C0}),
     .clr(clr),
-    .Q19(Q19),
-    .Q18(Q18),
-    .Q17(Q17),
-    .Q16(Q16),
-    .Q15(Q15),
-    .Q14(Q14),
-    .Q13(Q13),
-    .Q12(Q12),
-    .Q11(Q11),
-    .Q10(Q10),
-    .Q9(Q9),
-    .Q8(Q8),
-    .Q7(Q7),
-    .Q6(Q6),
-    .Q5(Q5),
-    .Q4(Q4),
-    .Q3(Q3),
-    .Q2(Q2),
-    .Q1(Q1),
-    .Q0(Q0),
+    .Q({Q19, Q18, Q17, Q16, Q15, Q14, Q13, Q12, Q11, Q10, Q9, Q8, Q7, Q6, Q5, Q4, Q3, Q2, Q1, Q0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[6-1:0])
 );
@@ -1796,24 +1744,6 @@ DSP_bot_switch_matrix Inst_DSP_bot_switch_matrix (
     .SS4END1(SS4END[1]),
     .SS4END2(SS4END[2]),
     .SS4END3(SS4END[3]),
-    .top2bot0(top2bot[0]),
-    .top2bot1(top2bot[1]),
-    .top2bot2(top2bot[2]),
-    .top2bot3(top2bot[3]),
-    .top2bot4(top2bot[4]),
-    .top2bot5(top2bot[5]),
-    .top2bot6(top2bot[6]),
-    .top2bot7(top2bot[7]),
-    .top2bot8(top2bot[8]),
-    .top2bot9(top2bot[9]),
-    .top2bot10(top2bot[10]),
-    .top2bot11(top2bot[11]),
-    .top2bot12(top2bot[12]),
-    .top2bot13(top2bot[13]),
-    .top2bot14(top2bot[14]),
-    .top2bot15(top2bot[15]),
-    .top2bot16(top2bot[16]),
-    .top2bot17(top2bot[17]),
     .W1END0(W1END[0]),
     .W1END1(W1END[1]),
     .W1END2(W1END[2]),
@@ -1840,26 +1770,44 @@ DSP_bot_switch_matrix Inst_DSP_bot_switch_matrix (
     .WW4END3(WW4END[3]),
     .W6END0(W6END[0]),
     .W6END1(W6END[1]),
-    .Q19(Q19),
-    .Q18(Q18),
-    .Q17(Q17),
-    .Q16(Q16),
-    .Q15(Q15),
-    .Q14(Q14),
-    .Q13(Q13),
-    .Q12(Q12),
-    .Q11(Q11),
-    .Q10(Q10),
-    .Q9(Q9),
-    .Q8(Q8),
-    .Q7(Q7),
-    .Q6(Q6),
-    .Q5(Q5),
-    .Q4(Q4),
-    .Q3(Q3),
-    .Q2(Q2),
-    .Q1(Q1),
+    .top2bot0(top2bot[0]),
+    .top2bot1(top2bot[1]),
+    .top2bot2(top2bot[2]),
+    .top2bot3(top2bot[3]),
+    .top2bot4(top2bot[4]),
+    .top2bot5(top2bot[5]),
+    .top2bot6(top2bot[6]),
+    .top2bot7(top2bot[7]),
+    .top2bot8(top2bot[8]),
+    .top2bot9(top2bot[9]),
+    .top2bot10(top2bot[10]),
+    .top2bot11(top2bot[11]),
+    .top2bot12(top2bot[12]),
+    .top2bot13(top2bot[13]),
+    .top2bot14(top2bot[14]),
+    .top2bot15(top2bot[15]),
+    .top2bot16(top2bot[16]),
+    .top2bot17(top2bot[17]),
     .Q0(Q0),
+    .Q1(Q1),
+    .Q2(Q2),
+    .Q3(Q3),
+    .Q4(Q4),
+    .Q5(Q5),
+    .Q6(Q6),
+    .Q7(Q7),
+    .Q8(Q8),
+    .Q9(Q9),
+    .Q10(Q10),
+    .Q11(Q11),
+    .Q12(Q12),
+    .Q13(Q13),
+    .Q14(Q14),
+    .Q15(Q15),
+    .Q16(Q16),
+    .Q17(Q17),
+    .Q18(Q18),
+    .Q19(Q19),
     .J2MID_ABa_END0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_END1(J2MID_ABa_BEG[1]),
     .J2MID_ABa_END2(J2MID_ABa_BEG[2]),
@@ -1984,16 +1932,6 @@ DSP_bot_switch_matrix Inst_DSP_bot_switch_matrix (
     .NN4BEG1(NN4BEG[13]),
     .NN4BEG2(NN4BEG[14]),
     .NN4BEG3(NN4BEG[15]),
-    .bot2top0(bot2top[0]),
-    .bot2top1(bot2top[1]),
-    .bot2top2(bot2top[2]),
-    .bot2top3(bot2top[3]),
-    .bot2top4(bot2top[4]),
-    .bot2top5(bot2top[5]),
-    .bot2top6(bot2top[6]),
-    .bot2top7(bot2top[7]),
-    .bot2top8(bot2top[8]),
-    .bot2top9(bot2top[9]),
     .E1BEG0(E1BEG[0]),
     .E1BEG1(E1BEG[1]),
     .E1BEG2(E1BEG[2]),
@@ -2074,42 +2012,52 @@ DSP_bot_switch_matrix Inst_DSP_bot_switch_matrix (
     .WW4BEG3(WW4BEG[15]),
     .W6BEG0(W6BEG[10]),
     .W6BEG1(W6BEG[11]),
-    .A7(A7),
-    .A6(A6),
-    .A5(A5),
-    .A4(A4),
-    .A3(A3),
-    .A2(A2),
-    .A1(A1),
+    .bot2top0(bot2top[0]),
+    .bot2top1(bot2top[1]),
+    .bot2top2(bot2top[2]),
+    .bot2top3(bot2top[3]),
+    .bot2top4(bot2top[4]),
+    .bot2top5(bot2top[5]),
+    .bot2top6(bot2top[6]),
+    .bot2top7(bot2top[7]),
+    .bot2top8(bot2top[8]),
+    .bot2top9(bot2top[9]),
     .A0(A0),
-    .B7(B7),
-    .B6(B6),
-    .B5(B5),
-    .B4(B4),
-    .B3(B3),
-    .B2(B2),
-    .B1(B1),
+    .A1(A1),
+    .A2(A2),
+    .A3(A3),
+    .A4(A4),
+    .A5(A5),
+    .A6(A6),
+    .A7(A7),
     .B0(B0),
-    .C19(C19),
-    .C18(C18),
-    .C17(C17),
-    .C16(C16),
-    .C15(C15),
-    .C14(C14),
-    .C13(C13),
-    .C12(C12),
-    .C11(C11),
-    .C10(C10),
-    .C9(C9),
-    .C8(C8),
-    .C7(C7),
-    .C6(C6),
-    .C5(C5),
-    .C4(C4),
-    .C3(C3),
-    .C2(C2),
-    .C1(C1),
+    .B1(B1),
+    .B2(B2),
+    .B3(B3),
+    .B4(B4),
+    .B5(B5),
+    .B6(B6),
+    .B7(B7),
     .C0(C0),
+    .C1(C1),
+    .C2(C2),
+    .C3(C3),
+    .C4(C4),
+    .C5(C5),
+    .C6(C6),
+    .C7(C7),
+    .C8(C8),
+    .C9(C9),
+    .C10(C10),
+    .C11(C11),
+    .C12(C12),
+    .C13(C13),
+    .C14(C14),
+    .C15(C15),
+    .C16(C16),
+    .C17(C17),
+    .C18(C18),
+    .C19(C19),
     .clr(clr),
     .J2MID_ABa_BEG0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_BEG1(J2MID_ABa_BEG[1]),

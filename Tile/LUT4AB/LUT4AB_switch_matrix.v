@@ -32,7 +32,6 @@ module LUT4AB_switch_matrix
         input NN4END1,
         input NN4END2,
         input NN4END3,
-        input Ci0,
         input E1END0,
         input E1END1,
         input E1END2,
@@ -113,22 +112,23 @@ module LUT4AB_switch_matrix
         input WW4END3,
         input W6END0,
         input W6END1,
-        input LA_O,
+        input Ci0,
         input LA_Co,
-        input LB_O,
+        input LA_O,
         input LB_Co,
-        input LC_O,
+        input LB_O,
         input LC_Co,
-        input LD_O,
+        input LC_O,
         input LD_Co,
-        input LE_O,
+        input LD_O,
         input LE_Co,
-        input LF_O,
+        input LE_O,
         input LF_Co,
-        input LG_O,
+        input LF_O,
         input LG_Co,
-        input LH_O,
+        input LG_O,
         input LH_Co,
+        input LH_O,
         input M_AB,
         input M_AD,
         input M_AH,
@@ -259,7 +259,6 @@ module LUT4AB_switch_matrix
         output NN4BEG1,
         output NN4BEG2,
         output NN4BEG3,
-        output Co0,
         output E1BEG0,
         output E1BEG1,
         output E1BEG2,
@@ -340,62 +339,63 @@ module LUT4AB_switch_matrix
         output WW4BEG3,
         output W6BEG0,
         output W6BEG1,
+        output Co0,
+        output LA_Ci,
+        output LA_EN,
         output LA_I0,
         output LA_I1,
         output LA_I2,
         output LA_I3,
-        output LA_Ci,
         output LA_SR,
-        output LA_EN,
+        output LB_Ci,
+        output LB_EN,
         output LB_I0,
         output LB_I1,
         output LB_I2,
         output LB_I3,
-        output LB_Ci,
         output LB_SR,
-        output LB_EN,
+        output LC_Ci,
+        output LC_EN,
         output LC_I0,
         output LC_I1,
         output LC_I2,
         output LC_I3,
-        output LC_Ci,
         output LC_SR,
-        output LC_EN,
+        output LD_Ci,
+        output LD_EN,
         output LD_I0,
         output LD_I1,
         output LD_I2,
         output LD_I3,
-        output LD_Ci,
         output LD_SR,
-        output LD_EN,
+        output LE_Ci,
+        output LE_EN,
         output LE_I0,
         output LE_I1,
         output LE_I2,
         output LE_I3,
-        output LE_Ci,
         output LE_SR,
-        output LE_EN,
+        output LF_Ci,
+        output LF_EN,
         output LF_I0,
         output LF_I1,
         output LF_I2,
         output LF_I3,
-        output LF_Ci,
         output LF_SR,
-        output LF_EN,
+        output LG_Ci,
+        output LG_EN,
         output LG_I0,
         output LG_I1,
         output LG_I2,
         output LG_I3,
-        output LG_Ci,
         output LG_SR,
-        output LG_EN,
+        output LH_Ci,
+        output LH_EN,
         output LH_I0,
         output LH_I1,
         output LH_I2,
         output LH_I3,
-        output LH_Ci,
         output LH_SR,
-        output LH_EN,
         output A,
         output B,
         output C,
@@ -521,22 +521,6 @@ wire[4-1:0] N1BEG0_input;
 wire[4-1:0] N1BEG1_input;
 wire[4-1:0] N1BEG2_input;
 wire[4-1:0] N1BEG3_input;
-wire[1-1:0] N2BEG0_input;
-wire[1-1:0] N2BEG1_input;
-wire[1-1:0] N2BEG2_input;
-wire[1-1:0] N2BEG3_input;
-wire[1-1:0] N2BEG4_input;
-wire[1-1:0] N2BEG5_input;
-wire[1-1:0] N2BEG6_input;
-wire[1-1:0] N2BEG7_input;
-wire[1-1:0] N2BEGb0_input;
-wire[1-1:0] N2BEGb1_input;
-wire[1-1:0] N2BEGb2_input;
-wire[1-1:0] N2BEGb3_input;
-wire[1-1:0] N2BEGb4_input;
-wire[1-1:0] N2BEGb5_input;
-wire[1-1:0] N2BEGb6_input;
-wire[1-1:0] N2BEGb7_input;
 wire[4-1:0] N4BEG0_input;
 wire[4-1:0] N4BEG1_input;
 wire[4-1:0] N4BEG2_input;
@@ -545,27 +529,10 @@ wire[8-1:0] NN4BEG0_input;
 wire[8-1:0] NN4BEG1_input;
 wire[8-1:0] NN4BEG2_input;
 wire[8-1:0] NN4BEG3_input;
-wire[1-1:0] Co0_input;
 wire[4-1:0] E1BEG0_input;
 wire[4-1:0] E1BEG1_input;
 wire[4-1:0] E1BEG2_input;
 wire[4-1:0] E1BEG3_input;
-wire[1-1:0] E2BEG0_input;
-wire[1-1:0] E2BEG1_input;
-wire[1-1:0] E2BEG2_input;
-wire[1-1:0] E2BEG3_input;
-wire[1-1:0] E2BEG4_input;
-wire[1-1:0] E2BEG5_input;
-wire[1-1:0] E2BEG6_input;
-wire[1-1:0] E2BEG7_input;
-wire[1-1:0] E2BEGb0_input;
-wire[1-1:0] E2BEGb1_input;
-wire[1-1:0] E2BEGb2_input;
-wire[1-1:0] E2BEGb3_input;
-wire[1-1:0] E2BEGb4_input;
-wire[1-1:0] E2BEGb5_input;
-wire[1-1:0] E2BEGb6_input;
-wire[1-1:0] E2BEGb7_input;
 wire[8-1:0] EE4BEG0_input;
 wire[8-1:0] EE4BEG1_input;
 wire[8-1:0] EE4BEG2_input;
@@ -576,22 +543,6 @@ wire[4-1:0] S1BEG0_input;
 wire[4-1:0] S1BEG1_input;
 wire[4-1:0] S1BEG2_input;
 wire[4-1:0] S1BEG3_input;
-wire[1-1:0] S2BEG0_input;
-wire[1-1:0] S2BEG1_input;
-wire[1-1:0] S2BEG2_input;
-wire[1-1:0] S2BEG3_input;
-wire[1-1:0] S2BEG4_input;
-wire[1-1:0] S2BEG5_input;
-wire[1-1:0] S2BEG6_input;
-wire[1-1:0] S2BEG7_input;
-wire[1-1:0] S2BEGb0_input;
-wire[1-1:0] S2BEGb1_input;
-wire[1-1:0] S2BEGb2_input;
-wire[1-1:0] S2BEGb3_input;
-wire[1-1:0] S2BEGb4_input;
-wire[1-1:0] S2BEGb5_input;
-wire[1-1:0] S2BEGb6_input;
-wire[1-1:0] S2BEGb7_input;
 wire[4-1:0] S4BEG0_input;
 wire[4-1:0] S4BEG1_input;
 wire[4-1:0] S4BEG2_input;
@@ -604,92 +555,60 @@ wire[4-1:0] W1BEG0_input;
 wire[4-1:0] W1BEG1_input;
 wire[4-1:0] W1BEG2_input;
 wire[4-1:0] W1BEG3_input;
-wire[1-1:0] W2BEG0_input;
-wire[1-1:0] W2BEG1_input;
-wire[1-1:0] W2BEG2_input;
-wire[1-1:0] W2BEG3_input;
-wire[1-1:0] W2BEG4_input;
-wire[1-1:0] W2BEG5_input;
-wire[1-1:0] W2BEG6_input;
-wire[1-1:0] W2BEG7_input;
-wire[1-1:0] W2BEGb0_input;
-wire[1-1:0] W2BEGb1_input;
-wire[1-1:0] W2BEGb2_input;
-wire[1-1:0] W2BEGb3_input;
-wire[1-1:0] W2BEGb4_input;
-wire[1-1:0] W2BEGb5_input;
-wire[1-1:0] W2BEGb6_input;
-wire[1-1:0] W2BEGb7_input;
 wire[8-1:0] WW4BEG0_input;
 wire[8-1:0] WW4BEG1_input;
 wire[8-1:0] WW4BEG2_input;
 wire[8-1:0] WW4BEG3_input;
 wire[16-1:0] W6BEG0_input;
 wire[16-1:0] W6BEG1_input;
+wire[2-1:0] LA_EN_input;
 wire[4-1:0] LA_I0_input;
 wire[4-1:0] LA_I1_input;
 wire[4-1:0] LA_I2_input;
 wire[4-1:0] LA_I3_input;
-wire[1-1:0] LA_Ci_input;
 wire[2-1:0] LA_SR_input;
-wire[2-1:0] LA_EN_input;
+wire[2-1:0] LB_EN_input;
 wire[4-1:0] LB_I0_input;
 wire[4-1:0] LB_I1_input;
 wire[4-1:0] LB_I2_input;
 wire[4-1:0] LB_I3_input;
-wire[1-1:0] LB_Ci_input;
 wire[2-1:0] LB_SR_input;
-wire[2-1:0] LB_EN_input;
+wire[2-1:0] LC_EN_input;
 wire[4-1:0] LC_I0_input;
 wire[4-1:0] LC_I1_input;
 wire[4-1:0] LC_I2_input;
 wire[4-1:0] LC_I3_input;
-wire[1-1:0] LC_Ci_input;
 wire[2-1:0] LC_SR_input;
-wire[2-1:0] LC_EN_input;
+wire[2-1:0] LD_EN_input;
 wire[4-1:0] LD_I0_input;
 wire[4-1:0] LD_I1_input;
 wire[4-1:0] LD_I2_input;
 wire[4-1:0] LD_I3_input;
-wire[1-1:0] LD_Ci_input;
 wire[2-1:0] LD_SR_input;
-wire[2-1:0] LD_EN_input;
+wire[2-1:0] LE_EN_input;
 wire[4-1:0] LE_I0_input;
 wire[4-1:0] LE_I1_input;
 wire[4-1:0] LE_I2_input;
 wire[4-1:0] LE_I3_input;
-wire[1-1:0] LE_Ci_input;
 wire[2-1:0] LE_SR_input;
-wire[2-1:0] LE_EN_input;
+wire[2-1:0] LF_EN_input;
 wire[4-1:0] LF_I0_input;
 wire[4-1:0] LF_I1_input;
 wire[4-1:0] LF_I2_input;
 wire[4-1:0] LF_I3_input;
-wire[1-1:0] LF_Ci_input;
 wire[2-1:0] LF_SR_input;
-wire[2-1:0] LF_EN_input;
+wire[2-1:0] LG_EN_input;
 wire[4-1:0] LG_I0_input;
 wire[4-1:0] LG_I1_input;
 wire[4-1:0] LG_I2_input;
 wire[4-1:0] LG_I3_input;
-wire[1-1:0] LG_Ci_input;
 wire[2-1:0] LG_SR_input;
-wire[2-1:0] LG_EN_input;
+wire[2-1:0] LH_EN_input;
 wire[4-1:0] LH_I0_input;
 wire[4-1:0] LH_I1_input;
 wire[4-1:0] LH_I2_input;
 wire[4-1:0] LH_I3_input;
-wire[1-1:0] LH_Ci_input;
 wire[2-1:0] LH_SR_input;
-wire[2-1:0] LH_EN_input;
-wire[1-1:0] A_input;
-wire[1-1:0] B_input;
-wire[1-1:0] C_input;
-wire[1-1:0] D_input;
-wire[1-1:0] E_input;
-wire[1-1:0] F_input;
-wire[1-1:0] G_input;
-wire[1-1:0] H_input;
 wire[4-1:0] S0_input;
 wire[4-1:0] S1_input;
 wire[4-1:0] S2_input;
@@ -793,200 +712,200 @@ wire[4-1:0] J_l_GH_BEG3_input;
 wire[8-1:0] J_SR_BEG0_input;
 wire[8-1:0] J_EN_BEG0_input;
 
-wire[2-1:0] DEBUG_select_N1BEG0;
-wire[2-1:0] DEBUG_select_N1BEG1;
-wire[2-1:0] DEBUG_select_N1BEG2;
-wire[2-1:0] DEBUG_select_N1BEG3;
-wire[2-1:0] DEBUG_select_N4BEG0;
-wire[2-1:0] DEBUG_select_N4BEG1;
-wire[2-1:0] DEBUG_select_N4BEG2;
-wire[2-1:0] DEBUG_select_N4BEG3;
-wire[3-1:0] DEBUG_select_NN4BEG0;
-wire[3-1:0] DEBUG_select_NN4BEG1;
-wire[3-1:0] DEBUG_select_NN4BEG2;
-wire[3-1:0] DEBUG_select_NN4BEG3;
-wire[2-1:0] DEBUG_select_E1BEG0;
-wire[2-1:0] DEBUG_select_E1BEG1;
-wire[2-1:0] DEBUG_select_E1BEG2;
-wire[2-1:0] DEBUG_select_E1BEG3;
-wire[3-1:0] DEBUG_select_EE4BEG0;
-wire[3-1:0] DEBUG_select_EE4BEG1;
-wire[3-1:0] DEBUG_select_EE4BEG2;
-wire[3-1:0] DEBUG_select_EE4BEG3;
-wire[4-1:0] DEBUG_select_E6BEG0;
-wire[4-1:0] DEBUG_select_E6BEG1;
-wire[2-1:0] DEBUG_select_S1BEG0;
-wire[2-1:0] DEBUG_select_S1BEG1;
-wire[2-1:0] DEBUG_select_S1BEG2;
-wire[2-1:0] DEBUG_select_S1BEG3;
-wire[2-1:0] DEBUG_select_S4BEG0;
-wire[2-1:0] DEBUG_select_S4BEG1;
-wire[2-1:0] DEBUG_select_S4BEG2;
-wire[2-1:0] DEBUG_select_S4BEG3;
-wire[3-1:0] DEBUG_select_SS4BEG0;
-wire[3-1:0] DEBUG_select_SS4BEG1;
-wire[3-1:0] DEBUG_select_SS4BEG2;
-wire[3-1:0] DEBUG_select_SS4BEG3;
-wire[2-1:0] DEBUG_select_W1BEG0;
-wire[2-1:0] DEBUG_select_W1BEG1;
-wire[2-1:0] DEBUG_select_W1BEG2;
-wire[2-1:0] DEBUG_select_W1BEG3;
-wire[3-1:0] DEBUG_select_WW4BEG0;
-wire[3-1:0] DEBUG_select_WW4BEG1;
-wire[3-1:0] DEBUG_select_WW4BEG2;
-wire[3-1:0] DEBUG_select_WW4BEG3;
-wire[4-1:0] DEBUG_select_W6BEG0;
-wire[4-1:0] DEBUG_select_W6BEG1;
-wire[2-1:0] DEBUG_select_LA_I0;
-wire[2-1:0] DEBUG_select_LA_I1;
-wire[2-1:0] DEBUG_select_LA_I2;
-wire[2-1:0] DEBUG_select_LA_I3;
-wire[1-1:0] DEBUG_select_LA_SR;
-wire[1-1:0] DEBUG_select_LA_EN;
-wire[2-1:0] DEBUG_select_LB_I0;
-wire[2-1:0] DEBUG_select_LB_I1;
-wire[2-1:0] DEBUG_select_LB_I2;
-wire[2-1:0] DEBUG_select_LB_I3;
-wire[1-1:0] DEBUG_select_LB_SR;
-wire[1-1:0] DEBUG_select_LB_EN;
-wire[2-1:0] DEBUG_select_LC_I0;
-wire[2-1:0] DEBUG_select_LC_I1;
-wire[2-1:0] DEBUG_select_LC_I2;
-wire[2-1:0] DEBUG_select_LC_I3;
-wire[1-1:0] DEBUG_select_LC_SR;
-wire[1-1:0] DEBUG_select_LC_EN;
-wire[2-1:0] DEBUG_select_LD_I0;
-wire[2-1:0] DEBUG_select_LD_I1;
-wire[2-1:0] DEBUG_select_LD_I2;
-wire[2-1:0] DEBUG_select_LD_I3;
-wire[1-1:0] DEBUG_select_LD_SR;
-wire[1-1:0] DEBUG_select_LD_EN;
-wire[2-1:0] DEBUG_select_LE_I0;
-wire[2-1:0] DEBUG_select_LE_I1;
-wire[2-1:0] DEBUG_select_LE_I2;
-wire[2-1:0] DEBUG_select_LE_I3;
-wire[1-1:0] DEBUG_select_LE_SR;
-wire[1-1:0] DEBUG_select_LE_EN;
-wire[2-1:0] DEBUG_select_LF_I0;
-wire[2-1:0] DEBUG_select_LF_I1;
-wire[2-1:0] DEBUG_select_LF_I2;
-wire[2-1:0] DEBUG_select_LF_I3;
-wire[1-1:0] DEBUG_select_LF_SR;
-wire[1-1:0] DEBUG_select_LF_EN;
-wire[2-1:0] DEBUG_select_LG_I0;
-wire[2-1:0] DEBUG_select_LG_I1;
-wire[2-1:0] DEBUG_select_LG_I2;
-wire[2-1:0] DEBUG_select_LG_I3;
-wire[1-1:0] DEBUG_select_LG_SR;
-wire[1-1:0] DEBUG_select_LG_EN;
-wire[2-1:0] DEBUG_select_LH_I0;
-wire[2-1:0] DEBUG_select_LH_I1;
-wire[2-1:0] DEBUG_select_LH_I2;
-wire[2-1:0] DEBUG_select_LH_I3;
-wire[1-1:0] DEBUG_select_LH_SR;
-wire[1-1:0] DEBUG_select_LH_EN;
-wire[2-1:0] DEBUG_select_S0;
-wire[2-1:0] DEBUG_select_S1;
-wire[2-1:0] DEBUG_select_S2;
-wire[2-1:0] DEBUG_select_S3;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG3;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG0;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG1;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG2;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG3;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG0;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG1;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG2;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG3;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG0;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG1;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG2;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG3;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG0;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG1;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG2;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG3;
-wire[4-1:0] DEBUG_select_JN2BEG0;
-wire[4-1:0] DEBUG_select_JN2BEG1;
-wire[4-1:0] DEBUG_select_JN2BEG2;
-wire[4-1:0] DEBUG_select_JN2BEG3;
-wire[4-1:0] DEBUG_select_JN2BEG4;
-wire[4-1:0] DEBUG_select_JN2BEG5;
-wire[4-1:0] DEBUG_select_JN2BEG6;
-wire[4-1:0] DEBUG_select_JN2BEG7;
-wire[4-1:0] DEBUG_select_JE2BEG0;
-wire[4-1:0] DEBUG_select_JE2BEG1;
-wire[4-1:0] DEBUG_select_JE2BEG2;
-wire[4-1:0] DEBUG_select_JE2BEG3;
-wire[4-1:0] DEBUG_select_JE2BEG4;
-wire[4-1:0] DEBUG_select_JE2BEG5;
-wire[4-1:0] DEBUG_select_JE2BEG6;
-wire[4-1:0] DEBUG_select_JE2BEG7;
-wire[4-1:0] DEBUG_select_JS2BEG0;
-wire[4-1:0] DEBUG_select_JS2BEG1;
-wire[4-1:0] DEBUG_select_JS2BEG2;
-wire[4-1:0] DEBUG_select_JS2BEG3;
-wire[4-1:0] DEBUG_select_JS2BEG4;
-wire[4-1:0] DEBUG_select_JS2BEG5;
-wire[4-1:0] DEBUG_select_JS2BEG6;
-wire[4-1:0] DEBUG_select_JS2BEG7;
-wire[4-1:0] DEBUG_select_JW2BEG0;
-wire[4-1:0] DEBUG_select_JW2BEG1;
-wire[4-1:0] DEBUG_select_JW2BEG2;
-wire[4-1:0] DEBUG_select_JW2BEG3;
-wire[4-1:0] DEBUG_select_JW2BEG4;
-wire[4-1:0] DEBUG_select_JW2BEG5;
-wire[4-1:0] DEBUG_select_JW2BEG6;
-wire[4-1:0] DEBUG_select_JW2BEG7;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG0;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG1;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG2;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG3;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG0;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG1;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG2;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG3;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG0;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG1;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG2;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG3;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG0;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG1;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG2;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG3;
-wire[3-1:0] DEBUG_select_J_SR_BEG0;
-wire[3-1:0] DEBUG_select_J_EN_BEG0;
+wire[1:0] DEBUG_select_N1BEG0;
+wire[1:0] DEBUG_select_N1BEG1;
+wire[1:0] DEBUG_select_N1BEG2;
+wire[1:0] DEBUG_select_N1BEG3;
+wire[1:0] DEBUG_select_N4BEG0;
+wire[1:0] DEBUG_select_N4BEG1;
+wire[1:0] DEBUG_select_N4BEG2;
+wire[1:0] DEBUG_select_N4BEG3;
+wire[2:0] DEBUG_select_NN4BEG0;
+wire[2:0] DEBUG_select_NN4BEG1;
+wire[2:0] DEBUG_select_NN4BEG2;
+wire[2:0] DEBUG_select_NN4BEG3;
+wire[1:0] DEBUG_select_E1BEG0;
+wire[1:0] DEBUG_select_E1BEG1;
+wire[1:0] DEBUG_select_E1BEG2;
+wire[1:0] DEBUG_select_E1BEG3;
+wire[2:0] DEBUG_select_EE4BEG0;
+wire[2:0] DEBUG_select_EE4BEG1;
+wire[2:0] DEBUG_select_EE4BEG2;
+wire[2:0] DEBUG_select_EE4BEG3;
+wire[3:0] DEBUG_select_E6BEG0;
+wire[3:0] DEBUG_select_E6BEG1;
+wire[1:0] DEBUG_select_S1BEG0;
+wire[1:0] DEBUG_select_S1BEG1;
+wire[1:0] DEBUG_select_S1BEG2;
+wire[1:0] DEBUG_select_S1BEG3;
+wire[1:0] DEBUG_select_S4BEG0;
+wire[1:0] DEBUG_select_S4BEG1;
+wire[1:0] DEBUG_select_S4BEG2;
+wire[1:0] DEBUG_select_S4BEG3;
+wire[2:0] DEBUG_select_SS4BEG0;
+wire[2:0] DEBUG_select_SS4BEG1;
+wire[2:0] DEBUG_select_SS4BEG2;
+wire[2:0] DEBUG_select_SS4BEG3;
+wire[1:0] DEBUG_select_W1BEG0;
+wire[1:0] DEBUG_select_W1BEG1;
+wire[1:0] DEBUG_select_W1BEG2;
+wire[1:0] DEBUG_select_W1BEG3;
+wire[2:0] DEBUG_select_WW4BEG0;
+wire[2:0] DEBUG_select_WW4BEG1;
+wire[2:0] DEBUG_select_WW4BEG2;
+wire[2:0] DEBUG_select_WW4BEG3;
+wire[3:0] DEBUG_select_W6BEG0;
+wire[3:0] DEBUG_select_W6BEG1;
+wire[0:0] DEBUG_select_LA_EN;
+wire[1:0] DEBUG_select_LA_I0;
+wire[1:0] DEBUG_select_LA_I1;
+wire[1:0] DEBUG_select_LA_I2;
+wire[1:0] DEBUG_select_LA_I3;
+wire[0:0] DEBUG_select_LA_SR;
+wire[0:0] DEBUG_select_LB_EN;
+wire[1:0] DEBUG_select_LB_I0;
+wire[1:0] DEBUG_select_LB_I1;
+wire[1:0] DEBUG_select_LB_I2;
+wire[1:0] DEBUG_select_LB_I3;
+wire[0:0] DEBUG_select_LB_SR;
+wire[0:0] DEBUG_select_LC_EN;
+wire[1:0] DEBUG_select_LC_I0;
+wire[1:0] DEBUG_select_LC_I1;
+wire[1:0] DEBUG_select_LC_I2;
+wire[1:0] DEBUG_select_LC_I3;
+wire[0:0] DEBUG_select_LC_SR;
+wire[0:0] DEBUG_select_LD_EN;
+wire[1:0] DEBUG_select_LD_I0;
+wire[1:0] DEBUG_select_LD_I1;
+wire[1:0] DEBUG_select_LD_I2;
+wire[1:0] DEBUG_select_LD_I3;
+wire[0:0] DEBUG_select_LD_SR;
+wire[0:0] DEBUG_select_LE_EN;
+wire[1:0] DEBUG_select_LE_I0;
+wire[1:0] DEBUG_select_LE_I1;
+wire[1:0] DEBUG_select_LE_I2;
+wire[1:0] DEBUG_select_LE_I3;
+wire[0:0] DEBUG_select_LE_SR;
+wire[0:0] DEBUG_select_LF_EN;
+wire[1:0] DEBUG_select_LF_I0;
+wire[1:0] DEBUG_select_LF_I1;
+wire[1:0] DEBUG_select_LF_I2;
+wire[1:0] DEBUG_select_LF_I3;
+wire[0:0] DEBUG_select_LF_SR;
+wire[0:0] DEBUG_select_LG_EN;
+wire[1:0] DEBUG_select_LG_I0;
+wire[1:0] DEBUG_select_LG_I1;
+wire[1:0] DEBUG_select_LG_I2;
+wire[1:0] DEBUG_select_LG_I3;
+wire[0:0] DEBUG_select_LG_SR;
+wire[0:0] DEBUG_select_LH_EN;
+wire[1:0] DEBUG_select_LH_I0;
+wire[1:0] DEBUG_select_LH_I1;
+wire[1:0] DEBUG_select_LH_I2;
+wire[1:0] DEBUG_select_LH_I3;
+wire[0:0] DEBUG_select_LH_SR;
+wire[1:0] DEBUG_select_S0;
+wire[1:0] DEBUG_select_S1;
+wire[1:0] DEBUG_select_S2;
+wire[1:0] DEBUG_select_S3;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG0;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG1;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG2;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG3;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG0;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG1;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG2;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG3;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG0;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG1;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG2;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG3;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG0;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG1;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG2;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG3;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG0;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG1;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG2;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG3;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG0;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG1;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG2;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG3;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG0;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG1;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG2;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG3;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG0;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG1;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG2;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG3;
+wire[1:0] DEBUG_select_J2END_AB_BEG0;
+wire[1:0] DEBUG_select_J2END_AB_BEG1;
+wire[1:0] DEBUG_select_J2END_AB_BEG2;
+wire[1:0] DEBUG_select_J2END_AB_BEG3;
+wire[1:0] DEBUG_select_J2END_CD_BEG0;
+wire[1:0] DEBUG_select_J2END_CD_BEG1;
+wire[1:0] DEBUG_select_J2END_CD_BEG2;
+wire[1:0] DEBUG_select_J2END_CD_BEG3;
+wire[1:0] DEBUG_select_J2END_EF_BEG0;
+wire[1:0] DEBUG_select_J2END_EF_BEG1;
+wire[1:0] DEBUG_select_J2END_EF_BEG2;
+wire[1:0] DEBUG_select_J2END_EF_BEG3;
+wire[1:0] DEBUG_select_J2END_GH_BEG0;
+wire[1:0] DEBUG_select_J2END_GH_BEG1;
+wire[1:0] DEBUG_select_J2END_GH_BEG2;
+wire[1:0] DEBUG_select_J2END_GH_BEG3;
+wire[3:0] DEBUG_select_JN2BEG0;
+wire[3:0] DEBUG_select_JN2BEG1;
+wire[3:0] DEBUG_select_JN2BEG2;
+wire[3:0] DEBUG_select_JN2BEG3;
+wire[3:0] DEBUG_select_JN2BEG4;
+wire[3:0] DEBUG_select_JN2BEG5;
+wire[3:0] DEBUG_select_JN2BEG6;
+wire[3:0] DEBUG_select_JN2BEG7;
+wire[3:0] DEBUG_select_JE2BEG0;
+wire[3:0] DEBUG_select_JE2BEG1;
+wire[3:0] DEBUG_select_JE2BEG2;
+wire[3:0] DEBUG_select_JE2BEG3;
+wire[3:0] DEBUG_select_JE2BEG4;
+wire[3:0] DEBUG_select_JE2BEG5;
+wire[3:0] DEBUG_select_JE2BEG6;
+wire[3:0] DEBUG_select_JE2BEG7;
+wire[3:0] DEBUG_select_JS2BEG0;
+wire[3:0] DEBUG_select_JS2BEG1;
+wire[3:0] DEBUG_select_JS2BEG2;
+wire[3:0] DEBUG_select_JS2BEG3;
+wire[3:0] DEBUG_select_JS2BEG4;
+wire[3:0] DEBUG_select_JS2BEG5;
+wire[3:0] DEBUG_select_JS2BEG6;
+wire[3:0] DEBUG_select_JS2BEG7;
+wire[3:0] DEBUG_select_JW2BEG0;
+wire[3:0] DEBUG_select_JW2BEG1;
+wire[3:0] DEBUG_select_JW2BEG2;
+wire[3:0] DEBUG_select_JW2BEG3;
+wire[3:0] DEBUG_select_JW2BEG4;
+wire[3:0] DEBUG_select_JW2BEG5;
+wire[3:0] DEBUG_select_JW2BEG6;
+wire[3:0] DEBUG_select_JW2BEG7;
+wire[1:0] DEBUG_select_J_l_AB_BEG0;
+wire[1:0] DEBUG_select_J_l_AB_BEG1;
+wire[1:0] DEBUG_select_J_l_AB_BEG2;
+wire[1:0] DEBUG_select_J_l_AB_BEG3;
+wire[1:0] DEBUG_select_J_l_CD_BEG0;
+wire[1:0] DEBUG_select_J_l_CD_BEG1;
+wire[1:0] DEBUG_select_J_l_CD_BEG2;
+wire[1:0] DEBUG_select_J_l_CD_BEG3;
+wire[1:0] DEBUG_select_J_l_EF_BEG0;
+wire[1:0] DEBUG_select_J_l_EF_BEG1;
+wire[1:0] DEBUG_select_J_l_EF_BEG2;
+wire[1:0] DEBUG_select_J_l_EF_BEG3;
+wire[1:0] DEBUG_select_J_l_GH_BEG0;
+wire[1:0] DEBUG_select_J_l_GH_BEG1;
+wire[1:0] DEBUG_select_J_l_GH_BEG2;
+wire[1:0] DEBUG_select_J_l_GH_BEG3;
+wire[2:0] DEBUG_select_J_SR_BEG0;
+wire[2:0] DEBUG_select_J_EN_BEG0;
  //The configuration bits (if any) are just a long shift register
  //This shift register is padded to an even number of flops/latches
  //switch matrix multiplexer N1BEG0 MUX-4
@@ -1228,9 +1147,6 @@ cus_mux81_buf inst_cus_mux81_buf_NN4BEG3 (
     .S2N(ConfigBits_N[25+2]),
     .X(NN4BEG3)
 );
-
- //switch matrix multiplexer Co0 MUX-1
-assign Co0 = LH_Co;
 
  //switch matrix multiplexer E1BEG0 MUX-4
 assign E1BEG0_input = {J_l_CD_END1,JN2END3,J2MID_CDb_END3,LD_O};
@@ -1960,6 +1876,21 @@ cus_mux161_buf inst_cus_mux161_buf_W6BEG1 (
     .X(W6BEG1)
 );
 
+ //switch matrix multiplexer Co0 MUX-1
+assign Co0 = LH_Co;
+
+ //switch matrix multiplexer LA_Ci MUX-1
+assign LA_Ci = Ci0;
+
+ //switch matrix multiplexer LA_EN MUX-2
+assign LA_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LA_EN (
+    .A0(LA_EN_input[0]),
+    .A1(LA_EN_input[1]),
+    .S(ConfigBits[112+0]),
+    .X(LA_EN)
+);
+
  //switch matrix multiplexer LA_I0 MUX-4
 assign LA_I0_input = {J_l_AB_END0,J2END_AB_END0,J2MID_ABb_END0,J2MID_ABa_END0};
 cus_mux41_buf inst_cus_mux41_buf_LA_I0 (
@@ -1967,10 +1898,10 @@ cus_mux41_buf inst_cus_mux41_buf_LA_I0 (
     .A1(LA_I0_input[1]),
     .A2(LA_I0_input[2]),
     .A3(LA_I0_input[3]),
-    .S0(ConfigBits[112+0]),
-    .S0N(ConfigBits_N[112+0]),
-    .S1(ConfigBits[112+1]),
-    .S1N(ConfigBits_N[112+1]),
+    .S0(ConfigBits[113+0]),
+    .S0N(ConfigBits_N[113+0]),
+    .S1(ConfigBits[113+1]),
+    .S1N(ConfigBits_N[113+1]),
     .X(LA_I0)
 );
 
@@ -1981,10 +1912,10 @@ cus_mux41_buf inst_cus_mux41_buf_LA_I1 (
     .A1(LA_I1_input[1]),
     .A2(LA_I1_input[2]),
     .A3(LA_I1_input[3]),
-    .S0(ConfigBits[114+0]),
-    .S0N(ConfigBits_N[114+0]),
-    .S1(ConfigBits[114+1]),
-    .S1N(ConfigBits_N[114+1]),
+    .S0(ConfigBits[115+0]),
+    .S0N(ConfigBits_N[115+0]),
+    .S1(ConfigBits[115+1]),
+    .S1N(ConfigBits_N[115+1]),
     .X(LA_I1)
 );
 
@@ -1995,10 +1926,10 @@ cus_mux41_buf inst_cus_mux41_buf_LA_I2 (
     .A1(LA_I2_input[1]),
     .A2(LA_I2_input[2]),
     .A3(LA_I2_input[3]),
-    .S0(ConfigBits[116+0]),
-    .S0N(ConfigBits_N[116+0]),
-    .S1(ConfigBits[116+1]),
-    .S1N(ConfigBits_N[116+1]),
+    .S0(ConfigBits[117+0]),
+    .S0N(ConfigBits_N[117+0]),
+    .S1(ConfigBits[117+1]),
+    .S1N(ConfigBits_N[117+1]),
     .X(LA_I2)
 );
 
@@ -2009,32 +1940,32 @@ cus_mux41_buf inst_cus_mux41_buf_LA_I3 (
     .A1(LA_I3_input[1]),
     .A2(LA_I3_input[2]),
     .A3(LA_I3_input[3]),
-    .S0(ConfigBits[118+0]),
-    .S0N(ConfigBits_N[118+0]),
-    .S1(ConfigBits[118+1]),
-    .S1N(ConfigBits_N[118+1]),
+    .S0(ConfigBits[119+0]),
+    .S0N(ConfigBits_N[119+0]),
+    .S1(ConfigBits[119+1]),
+    .S1N(ConfigBits_N[119+1]),
     .X(LA_I3)
 );
 
- //switch matrix multiplexer LA_Ci MUX-1
-assign LA_Ci = Ci0;
-
  //switch matrix multiplexer LA_SR MUX-2
 assign LA_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LA_SR (
+cus_mux21 inst_cus_mux21_LA_SR (
     .A0(LA_SR_input[0]),
     .A1(LA_SR_input[1]),
-    .S(ConfigBits[120+0]),
+    .S(ConfigBits[121+0]),
     .X(LA_SR)
 );
 
- //switch matrix multiplexer LA_EN MUX-2
-assign LA_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LA_EN (
-    .A0(LA_EN_input[0]),
-    .A1(LA_EN_input[1]),
-    .S(ConfigBits[121+0]),
-    .X(LA_EN)
+ //switch matrix multiplexer LB_Ci MUX-1
+assign LB_Ci = LA_Co;
+
+ //switch matrix multiplexer LB_EN MUX-2
+assign LB_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LB_EN (
+    .A0(LB_EN_input[0]),
+    .A1(LB_EN_input[1]),
+    .S(ConfigBits[122+0]),
+    .X(LB_EN)
 );
 
  //switch matrix multiplexer LB_I0 MUX-4
@@ -2044,10 +1975,10 @@ cus_mux41_buf inst_cus_mux41_buf_LB_I0 (
     .A1(LB_I0_input[1]),
     .A2(LB_I0_input[2]),
     .A3(LB_I0_input[3]),
-    .S0(ConfigBits[122+0]),
-    .S0N(ConfigBits_N[122+0]),
-    .S1(ConfigBits[122+1]),
-    .S1N(ConfigBits_N[122+1]),
+    .S0(ConfigBits[123+0]),
+    .S0N(ConfigBits_N[123+0]),
+    .S1(ConfigBits[123+1]),
+    .S1N(ConfigBits_N[123+1]),
     .X(LB_I0)
 );
 
@@ -2058,10 +1989,10 @@ cus_mux41_buf inst_cus_mux41_buf_LB_I1 (
     .A1(LB_I1_input[1]),
     .A2(LB_I1_input[2]),
     .A3(LB_I1_input[3]),
-    .S0(ConfigBits[124+0]),
-    .S0N(ConfigBits_N[124+0]),
-    .S1(ConfigBits[124+1]),
-    .S1N(ConfigBits_N[124+1]),
+    .S0(ConfigBits[125+0]),
+    .S0N(ConfigBits_N[125+0]),
+    .S1(ConfigBits[125+1]),
+    .S1N(ConfigBits_N[125+1]),
     .X(LB_I1)
 );
 
@@ -2072,10 +2003,10 @@ cus_mux41_buf inst_cus_mux41_buf_LB_I2 (
     .A1(LB_I2_input[1]),
     .A2(LB_I2_input[2]),
     .A3(LB_I2_input[3]),
-    .S0(ConfigBits[126+0]),
-    .S0N(ConfigBits_N[126+0]),
-    .S1(ConfigBits[126+1]),
-    .S1N(ConfigBits_N[126+1]),
+    .S0(ConfigBits[127+0]),
+    .S0N(ConfigBits_N[127+0]),
+    .S1(ConfigBits[127+1]),
+    .S1N(ConfigBits_N[127+1]),
     .X(LB_I2)
 );
 
@@ -2086,32 +2017,32 @@ cus_mux41_buf inst_cus_mux41_buf_LB_I3 (
     .A1(LB_I3_input[1]),
     .A2(LB_I3_input[2]),
     .A3(LB_I3_input[3]),
-    .S0(ConfigBits[128+0]),
-    .S0N(ConfigBits_N[128+0]),
-    .S1(ConfigBits[128+1]),
-    .S1N(ConfigBits_N[128+1]),
+    .S0(ConfigBits[129+0]),
+    .S0N(ConfigBits_N[129+0]),
+    .S1(ConfigBits[129+1]),
+    .S1N(ConfigBits_N[129+1]),
     .X(LB_I3)
 );
 
- //switch matrix multiplexer LB_Ci MUX-1
-assign LB_Ci = LA_Co;
-
  //switch matrix multiplexer LB_SR MUX-2
 assign LB_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LB_SR (
+cus_mux21 inst_cus_mux21_LB_SR (
     .A0(LB_SR_input[0]),
     .A1(LB_SR_input[1]),
-    .S(ConfigBits[130+0]),
+    .S(ConfigBits[131+0]),
     .X(LB_SR)
 );
 
- //switch matrix multiplexer LB_EN MUX-2
-assign LB_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LB_EN (
-    .A0(LB_EN_input[0]),
-    .A1(LB_EN_input[1]),
-    .S(ConfigBits[131+0]),
-    .X(LB_EN)
+ //switch matrix multiplexer LC_Ci MUX-1
+assign LC_Ci = LB_Co;
+
+ //switch matrix multiplexer LC_EN MUX-2
+assign LC_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LC_EN (
+    .A0(LC_EN_input[0]),
+    .A1(LC_EN_input[1]),
+    .S(ConfigBits[132+0]),
+    .X(LC_EN)
 );
 
  //switch matrix multiplexer LC_I0 MUX-4
@@ -2121,10 +2052,10 @@ cus_mux41_buf inst_cus_mux41_buf_LC_I0 (
     .A1(LC_I0_input[1]),
     .A2(LC_I0_input[2]),
     .A3(LC_I0_input[3]),
-    .S0(ConfigBits[132+0]),
-    .S0N(ConfigBits_N[132+0]),
-    .S1(ConfigBits[132+1]),
-    .S1N(ConfigBits_N[132+1]),
+    .S0(ConfigBits[133+0]),
+    .S0N(ConfigBits_N[133+0]),
+    .S1(ConfigBits[133+1]),
+    .S1N(ConfigBits_N[133+1]),
     .X(LC_I0)
 );
 
@@ -2135,10 +2066,10 @@ cus_mux41_buf inst_cus_mux41_buf_LC_I1 (
     .A1(LC_I1_input[1]),
     .A2(LC_I1_input[2]),
     .A3(LC_I1_input[3]),
-    .S0(ConfigBits[134+0]),
-    .S0N(ConfigBits_N[134+0]),
-    .S1(ConfigBits[134+1]),
-    .S1N(ConfigBits_N[134+1]),
+    .S0(ConfigBits[135+0]),
+    .S0N(ConfigBits_N[135+0]),
+    .S1(ConfigBits[135+1]),
+    .S1N(ConfigBits_N[135+1]),
     .X(LC_I1)
 );
 
@@ -2149,10 +2080,10 @@ cus_mux41_buf inst_cus_mux41_buf_LC_I2 (
     .A1(LC_I2_input[1]),
     .A2(LC_I2_input[2]),
     .A3(LC_I2_input[3]),
-    .S0(ConfigBits[136+0]),
-    .S0N(ConfigBits_N[136+0]),
-    .S1(ConfigBits[136+1]),
-    .S1N(ConfigBits_N[136+1]),
+    .S0(ConfigBits[137+0]),
+    .S0N(ConfigBits_N[137+0]),
+    .S1(ConfigBits[137+1]),
+    .S1N(ConfigBits_N[137+1]),
     .X(LC_I2)
 );
 
@@ -2163,32 +2094,32 @@ cus_mux41_buf inst_cus_mux41_buf_LC_I3 (
     .A1(LC_I3_input[1]),
     .A2(LC_I3_input[2]),
     .A3(LC_I3_input[3]),
-    .S0(ConfigBits[138+0]),
-    .S0N(ConfigBits_N[138+0]),
-    .S1(ConfigBits[138+1]),
-    .S1N(ConfigBits_N[138+1]),
+    .S0(ConfigBits[139+0]),
+    .S0N(ConfigBits_N[139+0]),
+    .S1(ConfigBits[139+1]),
+    .S1N(ConfigBits_N[139+1]),
     .X(LC_I3)
 );
 
- //switch matrix multiplexer LC_Ci MUX-1
-assign LC_Ci = LB_Co;
-
  //switch matrix multiplexer LC_SR MUX-2
 assign LC_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LC_SR (
+cus_mux21 inst_cus_mux21_LC_SR (
     .A0(LC_SR_input[0]),
     .A1(LC_SR_input[1]),
-    .S(ConfigBits[140+0]),
+    .S(ConfigBits[141+0]),
     .X(LC_SR)
 );
 
- //switch matrix multiplexer LC_EN MUX-2
-assign LC_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LC_EN (
-    .A0(LC_EN_input[0]),
-    .A1(LC_EN_input[1]),
-    .S(ConfigBits[141+0]),
-    .X(LC_EN)
+ //switch matrix multiplexer LD_Ci MUX-1
+assign LD_Ci = LC_Co;
+
+ //switch matrix multiplexer LD_EN MUX-2
+assign LD_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LD_EN (
+    .A0(LD_EN_input[0]),
+    .A1(LD_EN_input[1]),
+    .S(ConfigBits[142+0]),
+    .X(LD_EN)
 );
 
  //switch matrix multiplexer LD_I0 MUX-4
@@ -2198,10 +2129,10 @@ cus_mux41_buf inst_cus_mux41_buf_LD_I0 (
     .A1(LD_I0_input[1]),
     .A2(LD_I0_input[2]),
     .A3(LD_I0_input[3]),
-    .S0(ConfigBits[142+0]),
-    .S0N(ConfigBits_N[142+0]),
-    .S1(ConfigBits[142+1]),
-    .S1N(ConfigBits_N[142+1]),
+    .S0(ConfigBits[143+0]),
+    .S0N(ConfigBits_N[143+0]),
+    .S1(ConfigBits[143+1]),
+    .S1N(ConfigBits_N[143+1]),
     .X(LD_I0)
 );
 
@@ -2212,10 +2143,10 @@ cus_mux41_buf inst_cus_mux41_buf_LD_I1 (
     .A1(LD_I1_input[1]),
     .A2(LD_I1_input[2]),
     .A3(LD_I1_input[3]),
-    .S0(ConfigBits[144+0]),
-    .S0N(ConfigBits_N[144+0]),
-    .S1(ConfigBits[144+1]),
-    .S1N(ConfigBits_N[144+1]),
+    .S0(ConfigBits[145+0]),
+    .S0N(ConfigBits_N[145+0]),
+    .S1(ConfigBits[145+1]),
+    .S1N(ConfigBits_N[145+1]),
     .X(LD_I1)
 );
 
@@ -2226,10 +2157,10 @@ cus_mux41_buf inst_cus_mux41_buf_LD_I2 (
     .A1(LD_I2_input[1]),
     .A2(LD_I2_input[2]),
     .A3(LD_I2_input[3]),
-    .S0(ConfigBits[146+0]),
-    .S0N(ConfigBits_N[146+0]),
-    .S1(ConfigBits[146+1]),
-    .S1N(ConfigBits_N[146+1]),
+    .S0(ConfigBits[147+0]),
+    .S0N(ConfigBits_N[147+0]),
+    .S1(ConfigBits[147+1]),
+    .S1N(ConfigBits_N[147+1]),
     .X(LD_I2)
 );
 
@@ -2240,32 +2171,32 @@ cus_mux41_buf inst_cus_mux41_buf_LD_I3 (
     .A1(LD_I3_input[1]),
     .A2(LD_I3_input[2]),
     .A3(LD_I3_input[3]),
-    .S0(ConfigBits[148+0]),
-    .S0N(ConfigBits_N[148+0]),
-    .S1(ConfigBits[148+1]),
-    .S1N(ConfigBits_N[148+1]),
+    .S0(ConfigBits[149+0]),
+    .S0N(ConfigBits_N[149+0]),
+    .S1(ConfigBits[149+1]),
+    .S1N(ConfigBits_N[149+1]),
     .X(LD_I3)
 );
 
- //switch matrix multiplexer LD_Ci MUX-1
-assign LD_Ci = LC_Co;
-
  //switch matrix multiplexer LD_SR MUX-2
 assign LD_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LD_SR (
+cus_mux21 inst_cus_mux21_LD_SR (
     .A0(LD_SR_input[0]),
     .A1(LD_SR_input[1]),
-    .S(ConfigBits[150+0]),
+    .S(ConfigBits[151+0]),
     .X(LD_SR)
 );
 
- //switch matrix multiplexer LD_EN MUX-2
-assign LD_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LD_EN (
-    .A0(LD_EN_input[0]),
-    .A1(LD_EN_input[1]),
-    .S(ConfigBits[151+0]),
-    .X(LD_EN)
+ //switch matrix multiplexer LE_Ci MUX-1
+assign LE_Ci = LD_Co;
+
+ //switch matrix multiplexer LE_EN MUX-2
+assign LE_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LE_EN (
+    .A0(LE_EN_input[0]),
+    .A1(LE_EN_input[1]),
+    .S(ConfigBits[152+0]),
+    .X(LE_EN)
 );
 
  //switch matrix multiplexer LE_I0 MUX-4
@@ -2275,10 +2206,10 @@ cus_mux41_buf inst_cus_mux41_buf_LE_I0 (
     .A1(LE_I0_input[1]),
     .A2(LE_I0_input[2]),
     .A3(LE_I0_input[3]),
-    .S0(ConfigBits[152+0]),
-    .S0N(ConfigBits_N[152+0]),
-    .S1(ConfigBits[152+1]),
-    .S1N(ConfigBits_N[152+1]),
+    .S0(ConfigBits[153+0]),
+    .S0N(ConfigBits_N[153+0]),
+    .S1(ConfigBits[153+1]),
+    .S1N(ConfigBits_N[153+1]),
     .X(LE_I0)
 );
 
@@ -2289,10 +2220,10 @@ cus_mux41_buf inst_cus_mux41_buf_LE_I1 (
     .A1(LE_I1_input[1]),
     .A2(LE_I1_input[2]),
     .A3(LE_I1_input[3]),
-    .S0(ConfigBits[154+0]),
-    .S0N(ConfigBits_N[154+0]),
-    .S1(ConfigBits[154+1]),
-    .S1N(ConfigBits_N[154+1]),
+    .S0(ConfigBits[155+0]),
+    .S0N(ConfigBits_N[155+0]),
+    .S1(ConfigBits[155+1]),
+    .S1N(ConfigBits_N[155+1]),
     .X(LE_I1)
 );
 
@@ -2303,10 +2234,10 @@ cus_mux41_buf inst_cus_mux41_buf_LE_I2 (
     .A1(LE_I2_input[1]),
     .A2(LE_I2_input[2]),
     .A3(LE_I2_input[3]),
-    .S0(ConfigBits[156+0]),
-    .S0N(ConfigBits_N[156+0]),
-    .S1(ConfigBits[156+1]),
-    .S1N(ConfigBits_N[156+1]),
+    .S0(ConfigBits[157+0]),
+    .S0N(ConfigBits_N[157+0]),
+    .S1(ConfigBits[157+1]),
+    .S1N(ConfigBits_N[157+1]),
     .X(LE_I2)
 );
 
@@ -2317,32 +2248,32 @@ cus_mux41_buf inst_cus_mux41_buf_LE_I3 (
     .A1(LE_I3_input[1]),
     .A2(LE_I3_input[2]),
     .A3(LE_I3_input[3]),
-    .S0(ConfigBits[158+0]),
-    .S0N(ConfigBits_N[158+0]),
-    .S1(ConfigBits[158+1]),
-    .S1N(ConfigBits_N[158+1]),
+    .S0(ConfigBits[159+0]),
+    .S0N(ConfigBits_N[159+0]),
+    .S1(ConfigBits[159+1]),
+    .S1N(ConfigBits_N[159+1]),
     .X(LE_I3)
 );
 
- //switch matrix multiplexer LE_Ci MUX-1
-assign LE_Ci = LD_Co;
-
  //switch matrix multiplexer LE_SR MUX-2
 assign LE_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LE_SR (
+cus_mux21 inst_cus_mux21_LE_SR (
     .A0(LE_SR_input[0]),
     .A1(LE_SR_input[1]),
-    .S(ConfigBits[160+0]),
+    .S(ConfigBits[161+0]),
     .X(LE_SR)
 );
 
- //switch matrix multiplexer LE_EN MUX-2
-assign LE_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LE_EN (
-    .A0(LE_EN_input[0]),
-    .A1(LE_EN_input[1]),
-    .S(ConfigBits[161+0]),
-    .X(LE_EN)
+ //switch matrix multiplexer LF_Ci MUX-1
+assign LF_Ci = LE_Co;
+
+ //switch matrix multiplexer LF_EN MUX-2
+assign LF_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LF_EN (
+    .A0(LF_EN_input[0]),
+    .A1(LF_EN_input[1]),
+    .S(ConfigBits[162+0]),
+    .X(LF_EN)
 );
 
  //switch matrix multiplexer LF_I0 MUX-4
@@ -2352,10 +2283,10 @@ cus_mux41_buf inst_cus_mux41_buf_LF_I0 (
     .A1(LF_I0_input[1]),
     .A2(LF_I0_input[2]),
     .A3(LF_I0_input[3]),
-    .S0(ConfigBits[162+0]),
-    .S0N(ConfigBits_N[162+0]),
-    .S1(ConfigBits[162+1]),
-    .S1N(ConfigBits_N[162+1]),
+    .S0(ConfigBits[163+0]),
+    .S0N(ConfigBits_N[163+0]),
+    .S1(ConfigBits[163+1]),
+    .S1N(ConfigBits_N[163+1]),
     .X(LF_I0)
 );
 
@@ -2366,10 +2297,10 @@ cus_mux41_buf inst_cus_mux41_buf_LF_I1 (
     .A1(LF_I1_input[1]),
     .A2(LF_I1_input[2]),
     .A3(LF_I1_input[3]),
-    .S0(ConfigBits[164+0]),
-    .S0N(ConfigBits_N[164+0]),
-    .S1(ConfigBits[164+1]),
-    .S1N(ConfigBits_N[164+1]),
+    .S0(ConfigBits[165+0]),
+    .S0N(ConfigBits_N[165+0]),
+    .S1(ConfigBits[165+1]),
+    .S1N(ConfigBits_N[165+1]),
     .X(LF_I1)
 );
 
@@ -2380,10 +2311,10 @@ cus_mux41_buf inst_cus_mux41_buf_LF_I2 (
     .A1(LF_I2_input[1]),
     .A2(LF_I2_input[2]),
     .A3(LF_I2_input[3]),
-    .S0(ConfigBits[166+0]),
-    .S0N(ConfigBits_N[166+0]),
-    .S1(ConfigBits[166+1]),
-    .S1N(ConfigBits_N[166+1]),
+    .S0(ConfigBits[167+0]),
+    .S0N(ConfigBits_N[167+0]),
+    .S1(ConfigBits[167+1]),
+    .S1N(ConfigBits_N[167+1]),
     .X(LF_I2)
 );
 
@@ -2394,32 +2325,32 @@ cus_mux41_buf inst_cus_mux41_buf_LF_I3 (
     .A1(LF_I3_input[1]),
     .A2(LF_I3_input[2]),
     .A3(LF_I3_input[3]),
-    .S0(ConfigBits[168+0]),
-    .S0N(ConfigBits_N[168+0]),
-    .S1(ConfigBits[168+1]),
-    .S1N(ConfigBits_N[168+1]),
+    .S0(ConfigBits[169+0]),
+    .S0N(ConfigBits_N[169+0]),
+    .S1(ConfigBits[169+1]),
+    .S1N(ConfigBits_N[169+1]),
     .X(LF_I3)
 );
 
- //switch matrix multiplexer LF_Ci MUX-1
-assign LF_Ci = LE_Co;
-
  //switch matrix multiplexer LF_SR MUX-2
 assign LF_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LF_SR (
+cus_mux21 inst_cus_mux21_LF_SR (
     .A0(LF_SR_input[0]),
     .A1(LF_SR_input[1]),
-    .S(ConfigBits[170+0]),
+    .S(ConfigBits[171+0]),
     .X(LF_SR)
 );
 
- //switch matrix multiplexer LF_EN MUX-2
-assign LF_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LF_EN (
-    .A0(LF_EN_input[0]),
-    .A1(LF_EN_input[1]),
-    .S(ConfigBits[171+0]),
-    .X(LF_EN)
+ //switch matrix multiplexer LG_Ci MUX-1
+assign LG_Ci = LF_Co;
+
+ //switch matrix multiplexer LG_EN MUX-2
+assign LG_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LG_EN (
+    .A0(LG_EN_input[0]),
+    .A1(LG_EN_input[1]),
+    .S(ConfigBits[172+0]),
+    .X(LG_EN)
 );
 
  //switch matrix multiplexer LG_I0 MUX-4
@@ -2429,10 +2360,10 @@ cus_mux41_buf inst_cus_mux41_buf_LG_I0 (
     .A1(LG_I0_input[1]),
     .A2(LG_I0_input[2]),
     .A3(LG_I0_input[3]),
-    .S0(ConfigBits[172+0]),
-    .S0N(ConfigBits_N[172+0]),
-    .S1(ConfigBits[172+1]),
-    .S1N(ConfigBits_N[172+1]),
+    .S0(ConfigBits[173+0]),
+    .S0N(ConfigBits_N[173+0]),
+    .S1(ConfigBits[173+1]),
+    .S1N(ConfigBits_N[173+1]),
     .X(LG_I0)
 );
 
@@ -2443,10 +2374,10 @@ cus_mux41_buf inst_cus_mux41_buf_LG_I1 (
     .A1(LG_I1_input[1]),
     .A2(LG_I1_input[2]),
     .A3(LG_I1_input[3]),
-    .S0(ConfigBits[174+0]),
-    .S0N(ConfigBits_N[174+0]),
-    .S1(ConfigBits[174+1]),
-    .S1N(ConfigBits_N[174+1]),
+    .S0(ConfigBits[175+0]),
+    .S0N(ConfigBits_N[175+0]),
+    .S1(ConfigBits[175+1]),
+    .S1N(ConfigBits_N[175+1]),
     .X(LG_I1)
 );
 
@@ -2457,10 +2388,10 @@ cus_mux41_buf inst_cus_mux41_buf_LG_I2 (
     .A1(LG_I2_input[1]),
     .A2(LG_I2_input[2]),
     .A3(LG_I2_input[3]),
-    .S0(ConfigBits[176+0]),
-    .S0N(ConfigBits_N[176+0]),
-    .S1(ConfigBits[176+1]),
-    .S1N(ConfigBits_N[176+1]),
+    .S0(ConfigBits[177+0]),
+    .S0N(ConfigBits_N[177+0]),
+    .S1(ConfigBits[177+1]),
+    .S1N(ConfigBits_N[177+1]),
     .X(LG_I2)
 );
 
@@ -2471,32 +2402,32 @@ cus_mux41_buf inst_cus_mux41_buf_LG_I3 (
     .A1(LG_I3_input[1]),
     .A2(LG_I3_input[2]),
     .A3(LG_I3_input[3]),
-    .S0(ConfigBits[178+0]),
-    .S0N(ConfigBits_N[178+0]),
-    .S1(ConfigBits[178+1]),
-    .S1N(ConfigBits_N[178+1]),
+    .S0(ConfigBits[179+0]),
+    .S0N(ConfigBits_N[179+0]),
+    .S1(ConfigBits[179+1]),
+    .S1N(ConfigBits_N[179+1]),
     .X(LG_I3)
 );
 
- //switch matrix multiplexer LG_Ci MUX-1
-assign LG_Ci = LF_Co;
-
  //switch matrix multiplexer LG_SR MUX-2
 assign LG_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LG_SR (
+cus_mux21 inst_cus_mux21_LG_SR (
     .A0(LG_SR_input[0]),
     .A1(LG_SR_input[1]),
-    .S(ConfigBits[180+0]),
+    .S(ConfigBits[181+0]),
     .X(LG_SR)
 );
 
- //switch matrix multiplexer LG_EN MUX-2
-assign LG_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LG_EN (
-    .A0(LG_EN_input[0]),
-    .A1(LG_EN_input[1]),
-    .S(ConfigBits[181+0]),
-    .X(LG_EN)
+ //switch matrix multiplexer LH_Ci MUX-1
+assign LH_Ci = LG_Co;
+
+ //switch matrix multiplexer LH_EN MUX-2
+assign LH_EN_input = {J_EN_END0,VCC0};
+cus_mux21 inst_cus_mux21_LH_EN (
+    .A0(LH_EN_input[0]),
+    .A1(LH_EN_input[1]),
+    .S(ConfigBits[182+0]),
+    .X(LH_EN)
 );
 
  //switch matrix multiplexer LH_I0 MUX-4
@@ -2506,10 +2437,10 @@ cus_mux41_buf inst_cus_mux41_buf_LH_I0 (
     .A1(LH_I0_input[1]),
     .A2(LH_I0_input[2]),
     .A3(LH_I0_input[3]),
-    .S0(ConfigBits[182+0]),
-    .S0N(ConfigBits_N[182+0]),
-    .S1(ConfigBits[182+1]),
-    .S1N(ConfigBits_N[182+1]),
+    .S0(ConfigBits[183+0]),
+    .S0N(ConfigBits_N[183+0]),
+    .S1(ConfigBits[183+1]),
+    .S1N(ConfigBits_N[183+1]),
     .X(LH_I0)
 );
 
@@ -2520,10 +2451,10 @@ cus_mux41_buf inst_cus_mux41_buf_LH_I1 (
     .A1(LH_I1_input[1]),
     .A2(LH_I1_input[2]),
     .A3(LH_I1_input[3]),
-    .S0(ConfigBits[184+0]),
-    .S0N(ConfigBits_N[184+0]),
-    .S1(ConfigBits[184+1]),
-    .S1N(ConfigBits_N[184+1]),
+    .S0(ConfigBits[185+0]),
+    .S0N(ConfigBits_N[185+0]),
+    .S1(ConfigBits[185+1]),
+    .S1N(ConfigBits_N[185+1]),
     .X(LH_I1)
 );
 
@@ -2534,10 +2465,10 @@ cus_mux41_buf inst_cus_mux41_buf_LH_I2 (
     .A1(LH_I2_input[1]),
     .A2(LH_I2_input[2]),
     .A3(LH_I2_input[3]),
-    .S0(ConfigBits[186+0]),
-    .S0N(ConfigBits_N[186+0]),
-    .S1(ConfigBits[186+1]),
-    .S1N(ConfigBits_N[186+1]),
+    .S0(ConfigBits[187+0]),
+    .S0N(ConfigBits_N[187+0]),
+    .S1(ConfigBits[187+1]),
+    .S1N(ConfigBits_N[187+1]),
     .X(LH_I2)
 );
 
@@ -2548,32 +2479,20 @@ cus_mux41_buf inst_cus_mux41_buf_LH_I3 (
     .A1(LH_I3_input[1]),
     .A2(LH_I3_input[2]),
     .A3(LH_I3_input[3]),
-    .S0(ConfigBits[188+0]),
-    .S0N(ConfigBits_N[188+0]),
-    .S1(ConfigBits[188+1]),
-    .S1N(ConfigBits_N[188+1]),
+    .S0(ConfigBits[189+0]),
+    .S0N(ConfigBits_N[189+0]),
+    .S1(ConfigBits[189+1]),
+    .S1N(ConfigBits_N[189+1]),
     .X(LH_I3)
 );
 
- //switch matrix multiplexer LH_Ci MUX-1
-assign LH_Ci = LG_Co;
-
  //switch matrix multiplexer LH_SR MUX-2
 assign LH_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LH_SR (
+cus_mux21 inst_cus_mux21_LH_SR (
     .A0(LH_SR_input[0]),
     .A1(LH_SR_input[1]),
-    .S(ConfigBits[190+0]),
-    .X(LH_SR)
-);
-
- //switch matrix multiplexer LH_EN MUX-2
-assign LH_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LH_EN (
-    .A0(LH_EN_input[0]),
-    .A1(LH_EN_input[1]),
     .S(ConfigBits[191+0]),
-    .X(LH_EN)
+    .X(LH_SR)
 );
 
  //switch matrix multiplexer A MUX-1
@@ -4597,54 +4516,54 @@ assign DEBUG_select_WW4BEG2         = ConfigBits[100:98];
 assign DEBUG_select_WW4BEG3         = ConfigBits[103:101];
 assign DEBUG_select_W6BEG0          = ConfigBits[107:104];
 assign DEBUG_select_W6BEG1          = ConfigBits[111:108];
-assign DEBUG_select_LA_I0           = ConfigBits[113:112];
-assign DEBUG_select_LA_I1           = ConfigBits[115:114];
-assign DEBUG_select_LA_I2           = ConfigBits[117:116];
-assign DEBUG_select_LA_I3           = ConfigBits[119:118];
-assign DEBUG_select_LA_SR           = ConfigBits[120:120];
-assign DEBUG_select_LA_EN           = ConfigBits[121:121];
-assign DEBUG_select_LB_I0           = ConfigBits[123:122];
-assign DEBUG_select_LB_I1           = ConfigBits[125:124];
-assign DEBUG_select_LB_I2           = ConfigBits[127:126];
-assign DEBUG_select_LB_I3           = ConfigBits[129:128];
-assign DEBUG_select_LB_SR           = ConfigBits[130:130];
-assign DEBUG_select_LB_EN           = ConfigBits[131:131];
-assign DEBUG_select_LC_I0           = ConfigBits[133:132];
-assign DEBUG_select_LC_I1           = ConfigBits[135:134];
-assign DEBUG_select_LC_I2           = ConfigBits[137:136];
-assign DEBUG_select_LC_I3           = ConfigBits[139:138];
-assign DEBUG_select_LC_SR           = ConfigBits[140:140];
-assign DEBUG_select_LC_EN           = ConfigBits[141:141];
-assign DEBUG_select_LD_I0           = ConfigBits[143:142];
-assign DEBUG_select_LD_I1           = ConfigBits[145:144];
-assign DEBUG_select_LD_I2           = ConfigBits[147:146];
-assign DEBUG_select_LD_I3           = ConfigBits[149:148];
-assign DEBUG_select_LD_SR           = ConfigBits[150:150];
-assign DEBUG_select_LD_EN           = ConfigBits[151:151];
-assign DEBUG_select_LE_I0           = ConfigBits[153:152];
-assign DEBUG_select_LE_I1           = ConfigBits[155:154];
-assign DEBUG_select_LE_I2           = ConfigBits[157:156];
-assign DEBUG_select_LE_I3           = ConfigBits[159:158];
-assign DEBUG_select_LE_SR           = ConfigBits[160:160];
-assign DEBUG_select_LE_EN           = ConfigBits[161:161];
-assign DEBUG_select_LF_I0           = ConfigBits[163:162];
-assign DEBUG_select_LF_I1           = ConfigBits[165:164];
-assign DEBUG_select_LF_I2           = ConfigBits[167:166];
-assign DEBUG_select_LF_I3           = ConfigBits[169:168];
-assign DEBUG_select_LF_SR           = ConfigBits[170:170];
-assign DEBUG_select_LF_EN           = ConfigBits[171:171];
-assign DEBUG_select_LG_I0           = ConfigBits[173:172];
-assign DEBUG_select_LG_I1           = ConfigBits[175:174];
-assign DEBUG_select_LG_I2           = ConfigBits[177:176];
-assign DEBUG_select_LG_I3           = ConfigBits[179:178];
-assign DEBUG_select_LG_SR           = ConfigBits[180:180];
-assign DEBUG_select_LG_EN           = ConfigBits[181:181];
-assign DEBUG_select_LH_I0           = ConfigBits[183:182];
-assign DEBUG_select_LH_I1           = ConfigBits[185:184];
-assign DEBUG_select_LH_I2           = ConfigBits[187:186];
-assign DEBUG_select_LH_I3           = ConfigBits[189:188];
-assign DEBUG_select_LH_SR           = ConfigBits[190:190];
-assign DEBUG_select_LH_EN           = ConfigBits[191:191];
+assign DEBUG_select_LA_EN           = ConfigBits[112:112];
+assign DEBUG_select_LA_I0           = ConfigBits[114:113];
+assign DEBUG_select_LA_I1           = ConfigBits[116:115];
+assign DEBUG_select_LA_I2           = ConfigBits[118:117];
+assign DEBUG_select_LA_I3           = ConfigBits[120:119];
+assign DEBUG_select_LA_SR           = ConfigBits[121:121];
+assign DEBUG_select_LB_EN           = ConfigBits[122:122];
+assign DEBUG_select_LB_I0           = ConfigBits[124:123];
+assign DEBUG_select_LB_I1           = ConfigBits[126:125];
+assign DEBUG_select_LB_I2           = ConfigBits[128:127];
+assign DEBUG_select_LB_I3           = ConfigBits[130:129];
+assign DEBUG_select_LB_SR           = ConfigBits[131:131];
+assign DEBUG_select_LC_EN           = ConfigBits[132:132];
+assign DEBUG_select_LC_I0           = ConfigBits[134:133];
+assign DEBUG_select_LC_I1           = ConfigBits[136:135];
+assign DEBUG_select_LC_I2           = ConfigBits[138:137];
+assign DEBUG_select_LC_I3           = ConfigBits[140:139];
+assign DEBUG_select_LC_SR           = ConfigBits[141:141];
+assign DEBUG_select_LD_EN           = ConfigBits[142:142];
+assign DEBUG_select_LD_I0           = ConfigBits[144:143];
+assign DEBUG_select_LD_I1           = ConfigBits[146:145];
+assign DEBUG_select_LD_I2           = ConfigBits[148:147];
+assign DEBUG_select_LD_I3           = ConfigBits[150:149];
+assign DEBUG_select_LD_SR           = ConfigBits[151:151];
+assign DEBUG_select_LE_EN           = ConfigBits[152:152];
+assign DEBUG_select_LE_I0           = ConfigBits[154:153];
+assign DEBUG_select_LE_I1           = ConfigBits[156:155];
+assign DEBUG_select_LE_I2           = ConfigBits[158:157];
+assign DEBUG_select_LE_I3           = ConfigBits[160:159];
+assign DEBUG_select_LE_SR           = ConfigBits[161:161];
+assign DEBUG_select_LF_EN           = ConfigBits[162:162];
+assign DEBUG_select_LF_I0           = ConfigBits[164:163];
+assign DEBUG_select_LF_I1           = ConfigBits[166:165];
+assign DEBUG_select_LF_I2           = ConfigBits[168:167];
+assign DEBUG_select_LF_I3           = ConfigBits[170:169];
+assign DEBUG_select_LF_SR           = ConfigBits[171:171];
+assign DEBUG_select_LG_EN           = ConfigBits[172:172];
+assign DEBUG_select_LG_I0           = ConfigBits[174:173];
+assign DEBUG_select_LG_I1           = ConfigBits[176:175];
+assign DEBUG_select_LG_I2           = ConfigBits[178:177];
+assign DEBUG_select_LG_I3           = ConfigBits[180:179];
+assign DEBUG_select_LG_SR           = ConfigBits[181:181];
+assign DEBUG_select_LH_EN           = ConfigBits[182:182];
+assign DEBUG_select_LH_I0           = ConfigBits[184:183];
+assign DEBUG_select_LH_I1           = ConfigBits[186:185];
+assign DEBUG_select_LH_I2           = ConfigBits[188:187];
+assign DEBUG_select_LH_I3           = ConfigBits[190:189];
+assign DEBUG_select_LH_SR           = ConfigBits[191:191];
 assign DEBUG_select_S0              = ConfigBits[193:192];
 assign DEBUG_select_S1              = ConfigBits[195:194];
 assign DEBUG_select_S2              = ConfigBits[197:196];

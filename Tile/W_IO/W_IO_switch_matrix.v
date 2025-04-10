@@ -172,63 +172,63 @@ wire[8-1:0] A_T_input;
 wire[16-1:0] B_I_input;
 wire[8-1:0] B_T_input;
 
-wire[1-1:0] DEBUG_select_E1BEG0;
-wire[1-1:0] DEBUG_select_E1BEG1;
-wire[1-1:0] DEBUG_select_E1BEG2;
-wire[1-1:0] DEBUG_select_E1BEG3;
-wire[2-1:0] DEBUG_select_E2BEG0;
-wire[2-1:0] DEBUG_select_E2BEG1;
-wire[2-1:0] DEBUG_select_E2BEG2;
-wire[2-1:0] DEBUG_select_E2BEG3;
-wire[2-1:0] DEBUG_select_E2BEG4;
-wire[2-1:0] DEBUG_select_E2BEG5;
-wire[2-1:0] DEBUG_select_E2BEG6;
-wire[2-1:0] DEBUG_select_E2BEG7;
-wire[2-1:0] DEBUG_select_E2BEGb0;
-wire[2-1:0] DEBUG_select_E2BEGb1;
-wire[2-1:0] DEBUG_select_E2BEGb2;
-wire[2-1:0] DEBUG_select_E2BEGb3;
-wire[2-1:0] DEBUG_select_E2BEGb4;
-wire[2-1:0] DEBUG_select_E2BEGb5;
-wire[2-1:0] DEBUG_select_E2BEGb6;
-wire[2-1:0] DEBUG_select_E2BEGb7;
-wire[2-1:0] DEBUG_select_EE4BEG0;
-wire[2-1:0] DEBUG_select_EE4BEG1;
-wire[2-1:0] DEBUG_select_EE4BEG2;
-wire[2-1:0] DEBUG_select_EE4BEG3;
-wire[2-1:0] DEBUG_select_EE4BEG4;
-wire[2-1:0] DEBUG_select_EE4BEG5;
-wire[2-1:0] DEBUG_select_EE4BEG6;
-wire[2-1:0] DEBUG_select_EE4BEG7;
-wire[2-1:0] DEBUG_select_EE4BEG8;
-wire[2-1:0] DEBUG_select_EE4BEG9;
-wire[2-1:0] DEBUG_select_EE4BEG10;
-wire[2-1:0] DEBUG_select_EE4BEG11;
-wire[2-1:0] DEBUG_select_EE4BEG12;
-wire[2-1:0] DEBUG_select_EE4BEG13;
-wire[2-1:0] DEBUG_select_EE4BEG14;
-wire[2-1:0] DEBUG_select_EE4BEG15;
-wire[2-1:0] DEBUG_select_E6BEG0;
-wire[2-1:0] DEBUG_select_E6BEG1;
-wire[2-1:0] DEBUG_select_E6BEG2;
-wire[2-1:0] DEBUG_select_E6BEG3;
-wire[2-1:0] DEBUG_select_E6BEG4;
-wire[2-1:0] DEBUG_select_E6BEG5;
-wire[2-1:0] DEBUG_select_E6BEG6;
-wire[2-1:0] DEBUG_select_E6BEG7;
-wire[2-1:0] DEBUG_select_E6BEG8;
-wire[2-1:0] DEBUG_select_E6BEG9;
-wire[2-1:0] DEBUG_select_E6BEG10;
-wire[2-1:0] DEBUG_select_E6BEG11;
-wire[4-1:0] DEBUG_select_A_I;
-wire[3-1:0] DEBUG_select_A_T;
-wire[4-1:0] DEBUG_select_B_I;
-wire[3-1:0] DEBUG_select_B_T;
+wire[0:0] DEBUG_select_E1BEG0;
+wire[0:0] DEBUG_select_E1BEG1;
+wire[0:0] DEBUG_select_E1BEG2;
+wire[0:0] DEBUG_select_E1BEG3;
+wire[1:0] DEBUG_select_E2BEG0;
+wire[1:0] DEBUG_select_E2BEG1;
+wire[1:0] DEBUG_select_E2BEG2;
+wire[1:0] DEBUG_select_E2BEG3;
+wire[1:0] DEBUG_select_E2BEG4;
+wire[1:0] DEBUG_select_E2BEG5;
+wire[1:0] DEBUG_select_E2BEG6;
+wire[1:0] DEBUG_select_E2BEG7;
+wire[1:0] DEBUG_select_E2BEGb0;
+wire[1:0] DEBUG_select_E2BEGb1;
+wire[1:0] DEBUG_select_E2BEGb2;
+wire[1:0] DEBUG_select_E2BEGb3;
+wire[1:0] DEBUG_select_E2BEGb4;
+wire[1:0] DEBUG_select_E2BEGb5;
+wire[1:0] DEBUG_select_E2BEGb6;
+wire[1:0] DEBUG_select_E2BEGb7;
+wire[1:0] DEBUG_select_EE4BEG0;
+wire[1:0] DEBUG_select_EE4BEG1;
+wire[1:0] DEBUG_select_EE4BEG2;
+wire[1:0] DEBUG_select_EE4BEG3;
+wire[1:0] DEBUG_select_EE4BEG4;
+wire[1:0] DEBUG_select_EE4BEG5;
+wire[1:0] DEBUG_select_EE4BEG6;
+wire[1:0] DEBUG_select_EE4BEG7;
+wire[1:0] DEBUG_select_EE4BEG8;
+wire[1:0] DEBUG_select_EE4BEG9;
+wire[1:0] DEBUG_select_EE4BEG10;
+wire[1:0] DEBUG_select_EE4BEG11;
+wire[1:0] DEBUG_select_EE4BEG12;
+wire[1:0] DEBUG_select_EE4BEG13;
+wire[1:0] DEBUG_select_EE4BEG14;
+wire[1:0] DEBUG_select_EE4BEG15;
+wire[1:0] DEBUG_select_E6BEG0;
+wire[1:0] DEBUG_select_E6BEG1;
+wire[1:0] DEBUG_select_E6BEG2;
+wire[1:0] DEBUG_select_E6BEG3;
+wire[1:0] DEBUG_select_E6BEG4;
+wire[1:0] DEBUG_select_E6BEG5;
+wire[1:0] DEBUG_select_E6BEG6;
+wire[1:0] DEBUG_select_E6BEG7;
+wire[1:0] DEBUG_select_E6BEG8;
+wire[1:0] DEBUG_select_E6BEG9;
+wire[1:0] DEBUG_select_E6BEG10;
+wire[1:0] DEBUG_select_E6BEG11;
+wire[3:0] DEBUG_select_A_I;
+wire[2:0] DEBUG_select_A_T;
+wire[3:0] DEBUG_select_B_I;
+wire[2:0] DEBUG_select_B_T;
  //The configuration bits (if any) are just a long shift register
  //This shift register is padded to an even number of flops/latches
  //switch matrix multiplexer E1BEG0 MUX-2
 assign E1BEG0_input = {A_O,W1END3};
-my_mux2 inst_my_mux2_E1BEG0 (
+cus_mux21 inst_cus_mux21_E1BEG0 (
     .A0(E1BEG0_input[0]),
     .A1(E1BEG0_input[1]),
     .S(ConfigBits[0+0]),
@@ -237,7 +237,7 @@ my_mux2 inst_my_mux2_E1BEG0 (
 
  //switch matrix multiplexer E1BEG1 MUX-2
 assign E1BEG1_input = {A_Q,W1END2};
-my_mux2 inst_my_mux2_E1BEG1 (
+cus_mux21 inst_cus_mux21_E1BEG1 (
     .A0(E1BEG1_input[0]),
     .A1(E1BEG1_input[1]),
     .S(ConfigBits[1+0]),
@@ -246,7 +246,7 @@ my_mux2 inst_my_mux2_E1BEG1 (
 
  //switch matrix multiplexer E1BEG2 MUX-2
 assign E1BEG2_input = {B_O,W1END1};
-my_mux2 inst_my_mux2_E1BEG2 (
+cus_mux21 inst_cus_mux21_E1BEG2 (
     .A0(E1BEG2_input[0]),
     .A1(E1BEG2_input[1]),
     .S(ConfigBits[2+0]),
@@ -255,7 +255,7 @@ my_mux2 inst_my_mux2_E1BEG2 (
 
  //switch matrix multiplexer E1BEG3 MUX-2
 assign E1BEG3_input = {B_Q,W1END0};
-my_mux2 inst_my_mux2_E1BEG3 (
+cus_mux21 inst_cus_mux21_E1BEG3 (
     .A0(E1BEG3_input[0]),
     .A1(E1BEG3_input[1]),
     .S(ConfigBits[3+0]),

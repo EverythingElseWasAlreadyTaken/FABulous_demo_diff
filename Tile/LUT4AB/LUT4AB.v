@@ -14,12 +14,12 @@ module LUT4AB
         output [7:0] N2BEGb,        //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
         output [15:0] N4BEG,        //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
         output [15:0] NN4BEG,        //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
-        output [0:0] Co,        //Port(Name=Co, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=1, Side=NORTH)
         input [3:0] S1END,        //Port(Name=S1END, IO=INPUT, XOffset=0, YOffset=1, WireCount=4, Side=NORTH)
         input [7:0] S2MID,        //Port(Name=S2MID, IO=INPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
         input [7:0] S2END,        //Port(Name=S2END, IO=INPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
         input [15:0] S4END,        //Port(Name=S4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
         input [15:0] SS4END,        //Port(Name=SS4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
+        output [0:0] Co,        //Port(Name=Co, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=1, Side=NORTH)
  //Side.EAST
         output [3:0] E1BEG,        //Port(Name=E1BEG, IO=OUTPUT, XOffset=1, YOffset=0, WireCount=4, Side=EAST)
         output [7:0] E2BEG,        //Port(Name=E2BEG, IO=OUTPUT, XOffset=1, YOffset=0, WireCount=8, Side=EAST)
@@ -48,95 +48,95 @@ module LUT4AB
         input [7:0] N2END,        //Port(Name=N2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [15:0] N4END,        //Port(Name=N4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=SOUTH)
         input [15:0] NN4END,        //Port(Name=NN4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=SOUTH)
-        input [0:0] Ci,        //Port(Name=Ci, IO=INPUT, XOffset=0, YOffset=-1, WireCount=1, Side=SOUTH)
         output [3:0] S1BEG,        //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
         output [7:0] S2BEG,        //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         output [7:0] S2BEGb,        //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         output [15:0] S4BEG,        //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
         output [15:0] SS4BEG,        //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
+        input [0:0] Ci,        //Port(Name=Ci, IO=INPUT, XOffset=0, YOffset=-1, WireCount=1, Side=SOUTH)
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
-        output [FrameBitsPerRow -1:0] FrameData_O,
-        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
-        output [MaxFramesPerCol -1:0] FrameStrobe_O
+        input [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow-1:0] FrameData_O,
+        input [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
+        output [MaxFramesPerCol-1:0] FrameStrobe_O
     //global
 );
  //signal declarations
  //BEL ports (e.g., slices)
+wire LA_Ci;
+wire LA_EN;
 wire LA_I0;
 wire LA_I1;
 wire LA_I2;
 wire LA_I3;
-wire LA_Ci;
 wire LA_SR;
-wire LA_EN;
-wire LA_O;
 wire LA_Co;
+wire LA_O;
+wire LB_Ci;
+wire LB_EN;
 wire LB_I0;
 wire LB_I1;
 wire LB_I2;
 wire LB_I3;
-wire LB_Ci;
 wire LB_SR;
-wire LB_EN;
-wire LB_O;
 wire LB_Co;
+wire LB_O;
+wire LC_Ci;
+wire LC_EN;
 wire LC_I0;
 wire LC_I1;
 wire LC_I2;
 wire LC_I3;
-wire LC_Ci;
 wire LC_SR;
-wire LC_EN;
-wire LC_O;
 wire LC_Co;
+wire LC_O;
+wire LD_Ci;
+wire LD_EN;
 wire LD_I0;
 wire LD_I1;
 wire LD_I2;
 wire LD_I3;
-wire LD_Ci;
 wire LD_SR;
-wire LD_EN;
-wire LD_O;
 wire LD_Co;
+wire LD_O;
+wire LE_Ci;
+wire LE_EN;
 wire LE_I0;
 wire LE_I1;
 wire LE_I2;
 wire LE_I3;
-wire LE_Ci;
 wire LE_SR;
-wire LE_EN;
-wire LE_O;
 wire LE_Co;
+wire LE_O;
+wire LF_Ci;
+wire LF_EN;
 wire LF_I0;
 wire LF_I1;
 wire LF_I2;
 wire LF_I3;
-wire LF_Ci;
 wire LF_SR;
-wire LF_EN;
-wire LF_O;
 wire LF_Co;
+wire LF_O;
+wire LG_Ci;
+wire LG_EN;
 wire LG_I0;
 wire LG_I1;
 wire LG_I2;
 wire LG_I3;
-wire LG_Ci;
 wire LG_SR;
-wire LG_EN;
-wire LG_O;
 wire LG_Co;
+wire LG_O;
+wire LH_Ci;
+wire LH_EN;
 wire LH_I0;
 wire LH_I1;
 wire LH_I2;
 wire LH_I3;
-wire LH_Ci;
 wire LH_SR;
-wire LH_EN;
-wire LH_O;
 wire LH_Co;
+wire LH_O;
 wire A;
 wire B;
 wire C;
@@ -1685,113 +1685,89 @@ LUT4AB_ConfigMem
 
  //BEL component instantiations
 LUT4c_frame_config_dffesr Inst_LA_LUT4c_frame_config_dffesr (
-    .I0(LA_I0),
-    .I1(LA_I1),
-    .I2(LA_I2),
-    .I3(LA_I3),
     .Ci(LA_Ci),
-    .SR(LA_SR),
     .EN(LA_EN),
-    .O(LA_O),
+    .I({LA_I3, LA_I2, LA_I1, LA_I0}),
+    .SR(LA_SR),
     .Co(LA_Co),
+    .O(LA_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[19-1:0])
 );
 
 LUT4c_frame_config_dffesr Inst_LB_LUT4c_frame_config_dffesr (
-    .I0(LB_I0),
-    .I1(LB_I1),
-    .I2(LB_I2),
-    .I3(LB_I3),
     .Ci(LB_Ci),
-    .SR(LB_SR),
     .EN(LB_EN),
-    .O(LB_O),
+    .I({LB_I3, LB_I2, LB_I1, LB_I0}),
+    .SR(LB_SR),
     .Co(LB_Co),
+    .O(LB_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[38-1:19])
 );
 
 LUT4c_frame_config_dffesr Inst_LC_LUT4c_frame_config_dffesr (
-    .I0(LC_I0),
-    .I1(LC_I1),
-    .I2(LC_I2),
-    .I3(LC_I3),
     .Ci(LC_Ci),
-    .SR(LC_SR),
     .EN(LC_EN),
-    .O(LC_O),
+    .I({LC_I3, LC_I2, LC_I1, LC_I0}),
+    .SR(LC_SR),
     .Co(LC_Co),
+    .O(LC_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[57-1:38])
 );
 
 LUT4c_frame_config_dffesr Inst_LD_LUT4c_frame_config_dffesr (
-    .I0(LD_I0),
-    .I1(LD_I1),
-    .I2(LD_I2),
-    .I3(LD_I3),
     .Ci(LD_Ci),
-    .SR(LD_SR),
     .EN(LD_EN),
-    .O(LD_O),
+    .I({LD_I3, LD_I2, LD_I1, LD_I0}),
+    .SR(LD_SR),
     .Co(LD_Co),
+    .O(LD_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[76-1:57])
 );
 
 LUT4c_frame_config_dffesr Inst_LE_LUT4c_frame_config_dffesr (
-    .I0(LE_I0),
-    .I1(LE_I1),
-    .I2(LE_I2),
-    .I3(LE_I3),
     .Ci(LE_Ci),
-    .SR(LE_SR),
     .EN(LE_EN),
-    .O(LE_O),
+    .I({LE_I3, LE_I2, LE_I1, LE_I0}),
+    .SR(LE_SR),
     .Co(LE_Co),
+    .O(LE_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[95-1:76])
 );
 
 LUT4c_frame_config_dffesr Inst_LF_LUT4c_frame_config_dffesr (
-    .I0(LF_I0),
-    .I1(LF_I1),
-    .I2(LF_I2),
-    .I3(LF_I3),
     .Ci(LF_Ci),
-    .SR(LF_SR),
     .EN(LF_EN),
-    .O(LF_O),
+    .I({LF_I3, LF_I2, LF_I1, LF_I0}),
+    .SR(LF_SR),
     .Co(LF_Co),
+    .O(LF_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[114-1:95])
 );
 
 LUT4c_frame_config_dffesr Inst_LG_LUT4c_frame_config_dffesr (
-    .I0(LG_I0),
-    .I1(LG_I1),
-    .I2(LG_I2),
-    .I3(LG_I3),
     .Ci(LG_Ci),
-    .SR(LG_SR),
     .EN(LG_EN),
-    .O(LG_O),
+    .I({LG_I3, LG_I2, LG_I1, LG_I0}),
+    .SR(LG_SR),
     .Co(LG_Co),
+    .O(LG_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[133-1:114])
 );
 
 LUT4c_frame_config_dffesr Inst_LH_LUT4c_frame_config_dffesr (
-    .I0(LH_I0),
-    .I1(LH_I1),
-    .I2(LH_I2),
-    .I3(LH_I3),
     .Ci(LH_Ci),
-    .SR(LH_SR),
     .EN(LH_EN),
-    .O(LH_O),
+    .I({LH_I3, LH_I2, LH_I1, LH_I0}),
+    .SR(LH_SR),
     .Co(LH_Co),
+    .O(LH_O),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[152-1:133])
 );
@@ -1805,10 +1781,7 @@ MUX8LUT_frame_config_mux Inst_MUX8LUT_frame_config_mux (
     .F(F),
     .G(G),
     .H(H),
-    .S0(S0),
-    .S1(S1),
-    .S2(S2),
-    .S3(S3),
+    .S({S3, S2, S1, S0}),
     .M_AB(M_AB),
     .M_AD(M_AD),
     .M_AH(M_AH),
@@ -1845,7 +1818,6 @@ LUT4AB_switch_matrix Inst_LUT4AB_switch_matrix (
     .NN4END1(NN4END[1]),
     .NN4END2(NN4END[2]),
     .NN4END3(NN4END[3]),
-    .Ci0(Ci[0]),
     .E1END0(E1END[0]),
     .E1END1(E1END[1]),
     .E1END2(E1END[2]),
@@ -1926,22 +1898,23 @@ LUT4AB_switch_matrix Inst_LUT4AB_switch_matrix (
     .WW4END3(WW4END[3]),
     .W6END0(W6END[0]),
     .W6END1(W6END[1]),
-    .LA_O(LA_O),
+    .Ci0(Ci[0]),
     .LA_Co(LA_Co),
-    .LB_O(LB_O),
+    .LA_O(LA_O),
     .LB_Co(LB_Co),
-    .LC_O(LC_O),
+    .LB_O(LB_O),
     .LC_Co(LC_Co),
-    .LD_O(LD_O),
+    .LC_O(LC_O),
     .LD_Co(LD_Co),
-    .LE_O(LE_O),
+    .LD_O(LD_O),
     .LE_Co(LE_Co),
-    .LF_O(LF_O),
+    .LE_O(LE_O),
     .LF_Co(LF_Co),
-    .LG_O(LG_O),
+    .LF_O(LF_O),
     .LG_Co(LG_Co),
-    .LH_O(LH_O),
+    .LG_O(LG_O),
     .LH_Co(LH_Co),
+    .LH_O(LH_O),
     .M_AB(M_AB),
     .M_AD(M_AD),
     .M_AH(M_AH),
@@ -2072,7 +2045,6 @@ LUT4AB_switch_matrix Inst_LUT4AB_switch_matrix (
     .NN4BEG1(NN4BEG[13]),
     .NN4BEG2(NN4BEG[14]),
     .NN4BEG3(NN4BEG[15]),
-    .Co0(Co[0]),
     .E1BEG0(E1BEG[0]),
     .E1BEG1(E1BEG[1]),
     .E1BEG2(E1BEG[2]),
@@ -2153,62 +2125,63 @@ LUT4AB_switch_matrix Inst_LUT4AB_switch_matrix (
     .WW4BEG3(WW4BEG[15]),
     .W6BEG0(W6BEG[10]),
     .W6BEG1(W6BEG[11]),
+    .Co0(Co[0]),
+    .LA_Ci(LA_Ci),
+    .LA_EN(LA_EN),
     .LA_I0(LA_I0),
     .LA_I1(LA_I1),
     .LA_I2(LA_I2),
     .LA_I3(LA_I3),
-    .LA_Ci(LA_Ci),
     .LA_SR(LA_SR),
-    .LA_EN(LA_EN),
+    .LB_Ci(LB_Ci),
+    .LB_EN(LB_EN),
     .LB_I0(LB_I0),
     .LB_I1(LB_I1),
     .LB_I2(LB_I2),
     .LB_I3(LB_I3),
-    .LB_Ci(LB_Ci),
     .LB_SR(LB_SR),
-    .LB_EN(LB_EN),
+    .LC_Ci(LC_Ci),
+    .LC_EN(LC_EN),
     .LC_I0(LC_I0),
     .LC_I1(LC_I1),
     .LC_I2(LC_I2),
     .LC_I3(LC_I3),
-    .LC_Ci(LC_Ci),
     .LC_SR(LC_SR),
-    .LC_EN(LC_EN),
+    .LD_Ci(LD_Ci),
+    .LD_EN(LD_EN),
     .LD_I0(LD_I0),
     .LD_I1(LD_I1),
     .LD_I2(LD_I2),
     .LD_I3(LD_I3),
-    .LD_Ci(LD_Ci),
     .LD_SR(LD_SR),
-    .LD_EN(LD_EN),
+    .LE_Ci(LE_Ci),
+    .LE_EN(LE_EN),
     .LE_I0(LE_I0),
     .LE_I1(LE_I1),
     .LE_I2(LE_I2),
     .LE_I3(LE_I3),
-    .LE_Ci(LE_Ci),
     .LE_SR(LE_SR),
-    .LE_EN(LE_EN),
+    .LF_Ci(LF_Ci),
+    .LF_EN(LF_EN),
     .LF_I0(LF_I0),
     .LF_I1(LF_I1),
     .LF_I2(LF_I2),
     .LF_I3(LF_I3),
-    .LF_Ci(LF_Ci),
     .LF_SR(LF_SR),
-    .LF_EN(LF_EN),
+    .LG_Ci(LG_Ci),
+    .LG_EN(LG_EN),
     .LG_I0(LG_I0),
     .LG_I1(LG_I1),
     .LG_I2(LG_I2),
     .LG_I3(LG_I3),
-    .LG_Ci(LG_Ci),
     .LG_SR(LG_SR),
-    .LG_EN(LG_EN),
+    .LH_Ci(LH_Ci),
+    .LH_EN(LH_EN),
     .LH_I0(LH_I0),
     .LH_I1(LH_I1),
     .LH_I2(LH_I2),
     .LH_I3(LH_I3),
-    .LH_Ci(LH_Ci),
     .LH_SR(LH_SR),
-    .LH_EN(LH_EN),
     .A(A),
     .B(B),
     .C(C),
