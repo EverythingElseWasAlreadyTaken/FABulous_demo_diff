@@ -88,10 +88,10 @@ module RAM_IO
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
-        output [FrameBitsPerRow -1:0] FrameData_O,
-        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
-        output [MaxFramesPerCol -1:0] FrameStrobe_O
+        input [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow-1:0] FrameData_O,
+        input [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
+        output [MaxFramesPerCol-1:0] FrameStrobe_O
     //global
 );
  //signal declarations
@@ -949,153 +949,84 @@ RAM_IO_ConfigMem
 
  //BEL component instantiations
 InPass4_frame_config_mux Inst_RAM2FAB_D0_InPass4_frame_config_mux (
-    .O0(RAM2FAB_D0_O0),
-    .O1(RAM2FAB_D0_O1),
-    .O2(RAM2FAB_D0_O2),
-    .O3(RAM2FAB_D0_O3),
-    .I0(RAM2FAB_D0_I0),
-    .I1(RAM2FAB_D0_I1),
-    .I2(RAM2FAB_D0_I2),
-    .I3(RAM2FAB_D0_I3),
+    .O({RAM2FAB_D0_O3, RAM2FAB_D0_O2, RAM2FAB_D0_O1, RAM2FAB_D0_O0}),
+    .I({RAM2FAB_D0_I3, RAM2FAB_D0_I2, RAM2FAB_D0_I1, RAM2FAB_D0_I0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[4-1:0])
 );
 
 InPass4_frame_config_mux Inst_RAM2FAB_D1_InPass4_frame_config_mux (
-    .O0(RAM2FAB_D1_O0),
-    .O1(RAM2FAB_D1_O1),
-    .O2(RAM2FAB_D1_O2),
-    .O3(RAM2FAB_D1_O3),
-    .I0(RAM2FAB_D1_I0),
-    .I1(RAM2FAB_D1_I1),
-    .I2(RAM2FAB_D1_I2),
-    .I3(RAM2FAB_D1_I3),
+    .O({RAM2FAB_D1_O3, RAM2FAB_D1_O2, RAM2FAB_D1_O1, RAM2FAB_D1_O0}),
+    .I({RAM2FAB_D1_I3, RAM2FAB_D1_I2, RAM2FAB_D1_I1, RAM2FAB_D1_I0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[8-1:4])
 );
 
 InPass4_frame_config_mux Inst_RAM2FAB_D2_InPass4_frame_config_mux (
-    .O0(RAM2FAB_D2_O0),
-    .O1(RAM2FAB_D2_O1),
-    .O2(RAM2FAB_D2_O2),
-    .O3(RAM2FAB_D2_O3),
-    .I0(RAM2FAB_D2_I0),
-    .I1(RAM2FAB_D2_I1),
-    .I2(RAM2FAB_D2_I2),
-    .I3(RAM2FAB_D2_I3),
+    .O({RAM2FAB_D2_O3, RAM2FAB_D2_O2, RAM2FAB_D2_O1, RAM2FAB_D2_O0}),
+    .I({RAM2FAB_D2_I3, RAM2FAB_D2_I2, RAM2FAB_D2_I1, RAM2FAB_D2_I0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[12-1:8])
 );
 
 InPass4_frame_config_mux Inst_RAM2FAB_D3_InPass4_frame_config_mux (
-    .O0(RAM2FAB_D3_O0),
-    .O1(RAM2FAB_D3_O1),
-    .O2(RAM2FAB_D3_O2),
-    .O3(RAM2FAB_D3_O3),
-    .I0(RAM2FAB_D3_I0),
-    .I1(RAM2FAB_D3_I1),
-    .I2(RAM2FAB_D3_I2),
-    .I3(RAM2FAB_D3_I3),
+    .O({RAM2FAB_D3_O3, RAM2FAB_D3_O2, RAM2FAB_D3_O1, RAM2FAB_D3_O0}),
+    .I({RAM2FAB_D3_I3, RAM2FAB_D3_I2, RAM2FAB_D3_I1, RAM2FAB_D3_I0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[16-1:12])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_D0_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_D0_I0),
-    .I1(FAB2RAM_D0_I1),
-    .I2(FAB2RAM_D0_I2),
-    .I3(FAB2RAM_D0_I3),
-    .O0(FAB2RAM_D0_O0),
-    .O1(FAB2RAM_D0_O1),
-    .O2(FAB2RAM_D0_O2),
-    .O3(FAB2RAM_D0_O3),
+    .I({FAB2RAM_D0_I3, FAB2RAM_D0_I2, FAB2RAM_D0_I1, FAB2RAM_D0_I0}),
+    .O({FAB2RAM_D0_O3, FAB2RAM_D0_O2, FAB2RAM_D0_O1, FAB2RAM_D0_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[20-1:16])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_D1_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_D1_I0),
-    .I1(FAB2RAM_D1_I1),
-    .I2(FAB2RAM_D1_I2),
-    .I3(FAB2RAM_D1_I3),
-    .O0(FAB2RAM_D1_O0),
-    .O1(FAB2RAM_D1_O1),
-    .O2(FAB2RAM_D1_O2),
-    .O3(FAB2RAM_D1_O3),
+    .I({FAB2RAM_D1_I3, FAB2RAM_D1_I2, FAB2RAM_D1_I1, FAB2RAM_D1_I0}),
+    .O({FAB2RAM_D1_O3, FAB2RAM_D1_O2, FAB2RAM_D1_O1, FAB2RAM_D1_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[24-1:20])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_D2_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_D2_I0),
-    .I1(FAB2RAM_D2_I1),
-    .I2(FAB2RAM_D2_I2),
-    .I3(FAB2RAM_D2_I3),
-    .O0(FAB2RAM_D2_O0),
-    .O1(FAB2RAM_D2_O1),
-    .O2(FAB2RAM_D2_O2),
-    .O3(FAB2RAM_D2_O3),
+    .I({FAB2RAM_D2_I3, FAB2RAM_D2_I2, FAB2RAM_D2_I1, FAB2RAM_D2_I0}),
+    .O({FAB2RAM_D2_O3, FAB2RAM_D2_O2, FAB2RAM_D2_O1, FAB2RAM_D2_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[28-1:24])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_D3_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_D3_I0),
-    .I1(FAB2RAM_D3_I1),
-    .I2(FAB2RAM_D3_I2),
-    .I3(FAB2RAM_D3_I3),
-    .O0(FAB2RAM_D3_O0),
-    .O1(FAB2RAM_D3_O1),
-    .O2(FAB2RAM_D3_O2),
-    .O3(FAB2RAM_D3_O3),
+    .I({FAB2RAM_D3_I3, FAB2RAM_D3_I2, FAB2RAM_D3_I1, FAB2RAM_D3_I0}),
+    .O({FAB2RAM_D3_O3, FAB2RAM_D3_O2, FAB2RAM_D3_O1, FAB2RAM_D3_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[32-1:28])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_A0_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_A0_I0),
-    .I1(FAB2RAM_A0_I1),
-    .I2(FAB2RAM_A0_I2),
-    .I3(FAB2RAM_A0_I3),
-    .O0(FAB2RAM_A0_O0),
-    .O1(FAB2RAM_A0_O1),
-    .O2(FAB2RAM_A0_O2),
-    .O3(FAB2RAM_A0_O3),
+    .I({FAB2RAM_A0_I3, FAB2RAM_A0_I2, FAB2RAM_A0_I1, FAB2RAM_A0_I0}),
+    .O({FAB2RAM_A0_O3, FAB2RAM_A0_O2, FAB2RAM_A0_O1, FAB2RAM_A0_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[36-1:32])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_A1_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_A1_I0),
-    .I1(FAB2RAM_A1_I1),
-    .I2(FAB2RAM_A1_I2),
-    .I3(FAB2RAM_A1_I3),
-    .O0(FAB2RAM_A1_O0),
-    .O1(FAB2RAM_A1_O1),
-    .O2(FAB2RAM_A1_O2),
-    .O3(FAB2RAM_A1_O3),
+    .I({FAB2RAM_A1_I3, FAB2RAM_A1_I2, FAB2RAM_A1_I1, FAB2RAM_A1_I0}),
+    .O({FAB2RAM_A1_O3, FAB2RAM_A1_O2, FAB2RAM_A1_O1, FAB2RAM_A1_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[40-1:36])
 );
 
 OutPass4_frame_config_mux Inst_FAB2RAM_C_OutPass4_frame_config_mux (
-    .I0(FAB2RAM_C_I0),
-    .I1(FAB2RAM_C_I1),
-    .I2(FAB2RAM_C_I2),
-    .I3(FAB2RAM_C_I3),
-    .O0(FAB2RAM_C_O0),
-    .O1(FAB2RAM_C_O1),
-    .O2(FAB2RAM_C_O2),
-    .O3(FAB2RAM_C_O3),
+    .I({FAB2RAM_C_I3, FAB2RAM_C_I2, FAB2RAM_C_I1, FAB2RAM_C_I0}),
+    .O({FAB2RAM_C_O3, FAB2RAM_C_O2, FAB2RAM_C_O1, FAB2RAM_C_O0}),
     .UserCLK(UserCLK),
     .ConfigBits(ConfigBits[44-1:40])
 );
 
 Config_access Inst_Config_accessConfig_access (
-    .C_bit0(Config_accessC_bit0),
-    .C_bit1(Config_accessC_bit1),
-    .C_bit2(Config_accessC_bit2),
-    .C_bit3(Config_accessC_bit3),
+    .C_bit({Config_accessC_bit3, Config_accessC_bit2, Config_accessC_bit1, Config_accessC_bit0}),
     .ConfigBits(ConfigBits[48-1:44])
 );
 

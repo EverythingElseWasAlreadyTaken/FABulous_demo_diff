@@ -1,6 +1,6 @@
 Info: Detected FABulous 2.0 format project.
 
-Info: Checksum: 0x43c5ba0e
+Info: Checksum: 0xb6a2e62a
 
 Info: Device utilisation:
 Info: 	         FABULOUS_LC:      30/    672     4%
@@ -116,17 +116,17 @@ Info: [ 70849,  72350) |
 Info: [ 72350,  73851) | 
 Info: [ 73851,  75352) | 
 Info: [ 75352,  76853) |********************* 
-Info: Checksum: 0x05f5f845
+Info: Checksum: 0x00f5f1ba
 
 Info: Routing..
 Info: Setting up routing queue.
 Info: Routing 172 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:        250 |       68        182 |   68   182 |         0|       0.02       0.02|
+Info:        250 |       65        185 |   65   185 |         0|       0.02       0.02|
 Info: Routing complete.
 Info: Router1 time 0.02s
-Info: Checksum: 0x665015dc
+Info: Checksum: 0x678d1ad5
 
 Info: Critical path report for clock 'clk' (posedge -> posedge):
 Info:       type curr  total name
@@ -142,7 +142,7 @@ Info:                  0.400 X1Y11/JS2BEG1.JS2END1
 Info:                  0.400 X1Y11/LG_O.JS2BEG1
 Info:                  1.000 X1Y11/G_Q/X1Y11/LG_O
 Info:                          Defined in:
-Info:                               demo/user_design/sequential_16bit_en.v:1.72-1.78
+Info:                               /home/jart/work/uni/FABulous_2.0/demo/user_design/sequential_16bit_en.v:1.72-1.78
 Info:      logic  3.00  7.10 Source $abc$462$auto$blifparse.cc:535:parse_blif$467.O
 Info:    routing  2.10  9.20 Net $abc$462$new_n40 (1,11) -> (1,11)
 Info:                          Sink $abc$462$auto$blifparse.cc:535:parse_blif$470.I0

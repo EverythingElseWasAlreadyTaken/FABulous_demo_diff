@@ -5,8 +5,7 @@ module DSP
         parameter [639:0] Tile_X0Y1_Emulate_Bitstream=640'b0,
 `endif
         parameter MaxFramesPerCol=20,
-        parameter FrameBitsPerRow=32,
-        parameter NoConfigBits=0
+        parameter FrameBitsPerRow=32
     )
     (
     //Tile_X0Y0_Direction.NORTH
@@ -102,7 +101,7 @@ module DSP
     wire[15:0] Tile_X0Y1_NN4BEG; //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
     wire[9:0] Tile_X0Y1_bot2top; //Port(Name=bot2top, IO=OUTPUT, XOffset=0, YOffset=-1, WireCount=10, Side=NORTH)
     wire[MaxFramesPerCol-1:0] Tile_X0Y1_FrameStrobe_O;
-    wire Tile_X0Y1_userCLKo;
+    wire Tile_X0Y1_UserCLKo;
 
 DSP_top
 `ifdef EMULATION

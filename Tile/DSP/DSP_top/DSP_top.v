@@ -47,20 +47,20 @@ module DSP_top
         input [7:0] N2END,        //Port(Name=N2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=SOUTH)
         input [15:0] N4END,        //Port(Name=N4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=SOUTH)
         input [15:0] NN4END,        //Port(Name=NN4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=SOUTH)
-        input [9:0] bot2top,        //Port(Name=bot2top, IO=INPUT, XOffset=0, YOffset=-1, WireCount=10, Side=SOUTH)
         output [3:0] S1BEG,        //Port(Name=S1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=SOUTH)
         output [7:0] S2BEG,        //Port(Name=S2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         output [7:0] S2BEGb,        //Port(Name=S2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=SOUTH)
         output [15:0] S4BEG,        //Port(Name=S4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
         output [15:0] SS4BEG,        //Port(Name=SS4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=SOUTH)
+        input [9:0] bot2top,        //Port(Name=bot2top, IO=INPUT, XOffset=0, YOffset=-1, WireCount=10, Side=SOUTH)
         output [17:0] top2bot,        //Port(Name=top2bot, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=18, Side=SOUTH)
     //Tile IO ports from BELs
         input UserCLK,
         output UserCLKo,
-        input [FrameBitsPerRow -1:0] FrameData, //CONFIG_PORT
-        output [FrameBitsPerRow -1:0] FrameData_O,
-        input [MaxFramesPerCol -1:0] FrameStrobe, //CONFIG_PORT
-        output [MaxFramesPerCol -1:0] FrameStrobe_O
+        input [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
+        output [FrameBitsPerRow-1:0] FrameData_O,
+        input [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
+        output [MaxFramesPerCol-1:0] FrameStrobe_O
     //global
 );
  //signal declarations
@@ -1623,16 +1623,6 @@ DSP_top_switch_matrix Inst_DSP_top_switch_matrix (
     .NN4END1(NN4END[1]),
     .NN4END2(NN4END[2]),
     .NN4END3(NN4END[3]),
-    .bot2top0(bot2top[0]),
-    .bot2top1(bot2top[1]),
-    .bot2top2(bot2top[2]),
-    .bot2top3(bot2top[3]),
-    .bot2top4(bot2top[4]),
-    .bot2top5(bot2top[5]),
-    .bot2top6(bot2top[6]),
-    .bot2top7(bot2top[7]),
-    .bot2top8(bot2top[8]),
-    .bot2top9(bot2top[9]),
     .E1END0(E1END[0]),
     .E1END1(E1END[1]),
     .E1END2(E1END[2]),
@@ -1713,6 +1703,16 @@ DSP_top_switch_matrix Inst_DSP_top_switch_matrix (
     .WW4END3(WW4END[3]),
     .W6END0(W6END[0]),
     .W6END1(W6END[1]),
+    .bot2top0(bot2top[0]),
+    .bot2top1(bot2top[1]),
+    .bot2top2(bot2top[2]),
+    .bot2top3(bot2top[3]),
+    .bot2top4(bot2top[4]),
+    .bot2top5(bot2top[5]),
+    .bot2top6(bot2top[6]),
+    .bot2top7(bot2top[7]),
+    .bot2top8(bot2top[8]),
+    .bot2top9(bot2top[9]),
     .J2MID_ABa_END0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_END1(J2MID_ABa_BEG[1]),
     .J2MID_ABa_END2(J2MID_ABa_BEG[2]),
@@ -1891,24 +1891,6 @@ DSP_top_switch_matrix Inst_DSP_top_switch_matrix (
     .SS4BEG1(SS4BEG[13]),
     .SS4BEG2(SS4BEG[14]),
     .SS4BEG3(SS4BEG[15]),
-    .top2bot0(top2bot[0]),
-    .top2bot1(top2bot[1]),
-    .top2bot2(top2bot[2]),
-    .top2bot3(top2bot[3]),
-    .top2bot4(top2bot[4]),
-    .top2bot5(top2bot[5]),
-    .top2bot6(top2bot[6]),
-    .top2bot7(top2bot[7]),
-    .top2bot8(top2bot[8]),
-    .top2bot9(top2bot[9]),
-    .top2bot10(top2bot[10]),
-    .top2bot11(top2bot[11]),
-    .top2bot12(top2bot[12]),
-    .top2bot13(top2bot[13]),
-    .top2bot14(top2bot[14]),
-    .top2bot15(top2bot[15]),
-    .top2bot16(top2bot[16]),
-    .top2bot17(top2bot[17]),
     .W1BEG0(W1BEG[0]),
     .W1BEG1(W1BEG[1]),
     .W1BEG2(W1BEG[2]),
@@ -1935,6 +1917,24 @@ DSP_top_switch_matrix Inst_DSP_top_switch_matrix (
     .WW4BEG3(WW4BEG[15]),
     .W6BEG0(W6BEG[10]),
     .W6BEG1(W6BEG[11]),
+    .top2bot0(top2bot[0]),
+    .top2bot1(top2bot[1]),
+    .top2bot2(top2bot[2]),
+    .top2bot3(top2bot[3]),
+    .top2bot4(top2bot[4]),
+    .top2bot5(top2bot[5]),
+    .top2bot6(top2bot[6]),
+    .top2bot7(top2bot[7]),
+    .top2bot8(top2bot[8]),
+    .top2bot9(top2bot[9]),
+    .top2bot10(top2bot[10]),
+    .top2bot11(top2bot[11]),
+    .top2bot12(top2bot[12]),
+    .top2bot13(top2bot[13]),
+    .top2bot14(top2bot[14]),
+    .top2bot15(top2bot[15]),
+    .top2bot16(top2bot[16]),
+    .top2bot17(top2bot[17]),
     .J2MID_ABa_BEG0(J2MID_ABa_BEG[0]),
     .J2MID_ABa_BEG1(J2MID_ABa_BEG[1]),
     .J2MID_ABa_BEG2(J2MID_ABa_BEG[2]),
