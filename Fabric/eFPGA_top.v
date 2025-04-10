@@ -44,7 +44,6 @@ wire LongFrameStrobe;
 wire[31:0] LocalWriteData;
 wire LocalWriteStrobe;
 wire[RowSelectWidth-1:0] RowSelect;
-wire resten;
 `ifndef EMULATION
 
 eFPGA_Config
