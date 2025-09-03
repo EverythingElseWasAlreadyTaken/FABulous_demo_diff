@@ -521,22 +521,6 @@ wire[4-1:0] N1BEG0_input;
 wire[4-1:0] N1BEG1_input;
 wire[4-1:0] N1BEG2_input;
 wire[4-1:0] N1BEG3_input;
-wire[1-1:0] N2BEG0_input;
-wire[1-1:0] N2BEG1_input;
-wire[1-1:0] N2BEG2_input;
-wire[1-1:0] N2BEG3_input;
-wire[1-1:0] N2BEG4_input;
-wire[1-1:0] N2BEG5_input;
-wire[1-1:0] N2BEG6_input;
-wire[1-1:0] N2BEG7_input;
-wire[1-1:0] N2BEGb0_input;
-wire[1-1:0] N2BEGb1_input;
-wire[1-1:0] N2BEGb2_input;
-wire[1-1:0] N2BEGb3_input;
-wire[1-1:0] N2BEGb4_input;
-wire[1-1:0] N2BEGb5_input;
-wire[1-1:0] N2BEGb6_input;
-wire[1-1:0] N2BEGb7_input;
 wire[4-1:0] N4BEG0_input;
 wire[4-1:0] N4BEG1_input;
 wire[4-1:0] N4BEG2_input;
@@ -545,27 +529,10 @@ wire[8-1:0] NN4BEG0_input;
 wire[8-1:0] NN4BEG1_input;
 wire[8-1:0] NN4BEG2_input;
 wire[8-1:0] NN4BEG3_input;
-wire[1-1:0] Co0_input;
 wire[4-1:0] E1BEG0_input;
 wire[4-1:0] E1BEG1_input;
 wire[4-1:0] E1BEG2_input;
 wire[4-1:0] E1BEG3_input;
-wire[1-1:0] E2BEG0_input;
-wire[1-1:0] E2BEG1_input;
-wire[1-1:0] E2BEG2_input;
-wire[1-1:0] E2BEG3_input;
-wire[1-1:0] E2BEG4_input;
-wire[1-1:0] E2BEG5_input;
-wire[1-1:0] E2BEG6_input;
-wire[1-1:0] E2BEG7_input;
-wire[1-1:0] E2BEGb0_input;
-wire[1-1:0] E2BEGb1_input;
-wire[1-1:0] E2BEGb2_input;
-wire[1-1:0] E2BEGb3_input;
-wire[1-1:0] E2BEGb4_input;
-wire[1-1:0] E2BEGb5_input;
-wire[1-1:0] E2BEGb6_input;
-wire[1-1:0] E2BEGb7_input;
 wire[8-1:0] EE4BEG0_input;
 wire[8-1:0] EE4BEG1_input;
 wire[8-1:0] EE4BEG2_input;
@@ -576,22 +543,6 @@ wire[4-1:0] S1BEG0_input;
 wire[4-1:0] S1BEG1_input;
 wire[4-1:0] S1BEG2_input;
 wire[4-1:0] S1BEG3_input;
-wire[1-1:0] S2BEG0_input;
-wire[1-1:0] S2BEG1_input;
-wire[1-1:0] S2BEG2_input;
-wire[1-1:0] S2BEG3_input;
-wire[1-1:0] S2BEG4_input;
-wire[1-1:0] S2BEG5_input;
-wire[1-1:0] S2BEG6_input;
-wire[1-1:0] S2BEG7_input;
-wire[1-1:0] S2BEGb0_input;
-wire[1-1:0] S2BEGb1_input;
-wire[1-1:0] S2BEGb2_input;
-wire[1-1:0] S2BEGb3_input;
-wire[1-1:0] S2BEGb4_input;
-wire[1-1:0] S2BEGb5_input;
-wire[1-1:0] S2BEGb6_input;
-wire[1-1:0] S2BEGb7_input;
 wire[4-1:0] S4BEG0_input;
 wire[4-1:0] S4BEG1_input;
 wire[4-1:0] S4BEG2_input;
@@ -604,22 +555,6 @@ wire[4-1:0] W1BEG0_input;
 wire[4-1:0] W1BEG1_input;
 wire[4-1:0] W1BEG2_input;
 wire[4-1:0] W1BEG3_input;
-wire[1-1:0] W2BEG0_input;
-wire[1-1:0] W2BEG1_input;
-wire[1-1:0] W2BEG2_input;
-wire[1-1:0] W2BEG3_input;
-wire[1-1:0] W2BEG4_input;
-wire[1-1:0] W2BEG5_input;
-wire[1-1:0] W2BEG6_input;
-wire[1-1:0] W2BEG7_input;
-wire[1-1:0] W2BEGb0_input;
-wire[1-1:0] W2BEGb1_input;
-wire[1-1:0] W2BEGb2_input;
-wire[1-1:0] W2BEGb3_input;
-wire[1-1:0] W2BEGb4_input;
-wire[1-1:0] W2BEGb5_input;
-wire[1-1:0] W2BEGb6_input;
-wire[1-1:0] W2BEGb7_input;
 wire[8-1:0] WW4BEG0_input;
 wire[8-1:0] WW4BEG1_input;
 wire[8-1:0] WW4BEG2_input;
@@ -630,66 +565,50 @@ wire[4-1:0] LA_I0_input;
 wire[4-1:0] LA_I1_input;
 wire[4-1:0] LA_I2_input;
 wire[4-1:0] LA_I3_input;
-wire[1-1:0] LA_Ci_input;
 wire[2-1:0] LA_SR_input;
 wire[2-1:0] LA_EN_input;
 wire[4-1:0] LB_I0_input;
 wire[4-1:0] LB_I1_input;
 wire[4-1:0] LB_I2_input;
 wire[4-1:0] LB_I3_input;
-wire[1-1:0] LB_Ci_input;
 wire[2-1:0] LB_SR_input;
 wire[2-1:0] LB_EN_input;
 wire[4-1:0] LC_I0_input;
 wire[4-1:0] LC_I1_input;
 wire[4-1:0] LC_I2_input;
 wire[4-1:0] LC_I3_input;
-wire[1-1:0] LC_Ci_input;
 wire[2-1:0] LC_SR_input;
 wire[2-1:0] LC_EN_input;
 wire[4-1:0] LD_I0_input;
 wire[4-1:0] LD_I1_input;
 wire[4-1:0] LD_I2_input;
 wire[4-1:0] LD_I3_input;
-wire[1-1:0] LD_Ci_input;
 wire[2-1:0] LD_SR_input;
 wire[2-1:0] LD_EN_input;
 wire[4-1:0] LE_I0_input;
 wire[4-1:0] LE_I1_input;
 wire[4-1:0] LE_I2_input;
 wire[4-1:0] LE_I3_input;
-wire[1-1:0] LE_Ci_input;
 wire[2-1:0] LE_SR_input;
 wire[2-1:0] LE_EN_input;
 wire[4-1:0] LF_I0_input;
 wire[4-1:0] LF_I1_input;
 wire[4-1:0] LF_I2_input;
 wire[4-1:0] LF_I3_input;
-wire[1-1:0] LF_Ci_input;
 wire[2-1:0] LF_SR_input;
 wire[2-1:0] LF_EN_input;
 wire[4-1:0] LG_I0_input;
 wire[4-1:0] LG_I1_input;
 wire[4-1:0] LG_I2_input;
 wire[4-1:0] LG_I3_input;
-wire[1-1:0] LG_Ci_input;
 wire[2-1:0] LG_SR_input;
 wire[2-1:0] LG_EN_input;
 wire[4-1:0] LH_I0_input;
 wire[4-1:0] LH_I1_input;
 wire[4-1:0] LH_I2_input;
 wire[4-1:0] LH_I3_input;
-wire[1-1:0] LH_Ci_input;
 wire[2-1:0] LH_SR_input;
 wire[2-1:0] LH_EN_input;
-wire[1-1:0] A_input;
-wire[1-1:0] B_input;
-wire[1-1:0] C_input;
-wire[1-1:0] D_input;
-wire[1-1:0] E_input;
-wire[1-1:0] F_input;
-wire[1-1:0] G_input;
-wire[1-1:0] H_input;
 wire[4-1:0] S0_input;
 wire[4-1:0] S1_input;
 wire[4-1:0] S2_input;
@@ -793,200 +712,200 @@ wire[4-1:0] J_l_GH_BEG3_input;
 wire[8-1:0] J_SR_BEG0_input;
 wire[8-1:0] J_EN_BEG0_input;
 
-wire[2-1:0] DEBUG_select_N1BEG0;
-wire[2-1:0] DEBUG_select_N1BEG1;
-wire[2-1:0] DEBUG_select_N1BEG2;
-wire[2-1:0] DEBUG_select_N1BEG3;
-wire[2-1:0] DEBUG_select_N4BEG0;
-wire[2-1:0] DEBUG_select_N4BEG1;
-wire[2-1:0] DEBUG_select_N4BEG2;
-wire[2-1:0] DEBUG_select_N4BEG3;
-wire[3-1:0] DEBUG_select_NN4BEG0;
-wire[3-1:0] DEBUG_select_NN4BEG1;
-wire[3-1:0] DEBUG_select_NN4BEG2;
-wire[3-1:0] DEBUG_select_NN4BEG3;
-wire[2-1:0] DEBUG_select_E1BEG0;
-wire[2-1:0] DEBUG_select_E1BEG1;
-wire[2-1:0] DEBUG_select_E1BEG2;
-wire[2-1:0] DEBUG_select_E1BEG3;
-wire[3-1:0] DEBUG_select_EE4BEG0;
-wire[3-1:0] DEBUG_select_EE4BEG1;
-wire[3-1:0] DEBUG_select_EE4BEG2;
-wire[3-1:0] DEBUG_select_EE4BEG3;
-wire[4-1:0] DEBUG_select_E6BEG0;
-wire[4-1:0] DEBUG_select_E6BEG1;
-wire[2-1:0] DEBUG_select_S1BEG0;
-wire[2-1:0] DEBUG_select_S1BEG1;
-wire[2-1:0] DEBUG_select_S1BEG2;
-wire[2-1:0] DEBUG_select_S1BEG3;
-wire[2-1:0] DEBUG_select_S4BEG0;
-wire[2-1:0] DEBUG_select_S4BEG1;
-wire[2-1:0] DEBUG_select_S4BEG2;
-wire[2-1:0] DEBUG_select_S4BEG3;
-wire[3-1:0] DEBUG_select_SS4BEG0;
-wire[3-1:0] DEBUG_select_SS4BEG1;
-wire[3-1:0] DEBUG_select_SS4BEG2;
-wire[3-1:0] DEBUG_select_SS4BEG3;
-wire[2-1:0] DEBUG_select_W1BEG0;
-wire[2-1:0] DEBUG_select_W1BEG1;
-wire[2-1:0] DEBUG_select_W1BEG2;
-wire[2-1:0] DEBUG_select_W1BEG3;
-wire[3-1:0] DEBUG_select_WW4BEG0;
-wire[3-1:0] DEBUG_select_WW4BEG1;
-wire[3-1:0] DEBUG_select_WW4BEG2;
-wire[3-1:0] DEBUG_select_WW4BEG3;
-wire[4-1:0] DEBUG_select_W6BEG0;
-wire[4-1:0] DEBUG_select_W6BEG1;
-wire[2-1:0] DEBUG_select_LA_I0;
-wire[2-1:0] DEBUG_select_LA_I1;
-wire[2-1:0] DEBUG_select_LA_I2;
-wire[2-1:0] DEBUG_select_LA_I3;
-wire[1-1:0] DEBUG_select_LA_SR;
-wire[1-1:0] DEBUG_select_LA_EN;
-wire[2-1:0] DEBUG_select_LB_I0;
-wire[2-1:0] DEBUG_select_LB_I1;
-wire[2-1:0] DEBUG_select_LB_I2;
-wire[2-1:0] DEBUG_select_LB_I3;
-wire[1-1:0] DEBUG_select_LB_SR;
-wire[1-1:0] DEBUG_select_LB_EN;
-wire[2-1:0] DEBUG_select_LC_I0;
-wire[2-1:0] DEBUG_select_LC_I1;
-wire[2-1:0] DEBUG_select_LC_I2;
-wire[2-1:0] DEBUG_select_LC_I3;
-wire[1-1:0] DEBUG_select_LC_SR;
-wire[1-1:0] DEBUG_select_LC_EN;
-wire[2-1:0] DEBUG_select_LD_I0;
-wire[2-1:0] DEBUG_select_LD_I1;
-wire[2-1:0] DEBUG_select_LD_I2;
-wire[2-1:0] DEBUG_select_LD_I3;
-wire[1-1:0] DEBUG_select_LD_SR;
-wire[1-1:0] DEBUG_select_LD_EN;
-wire[2-1:0] DEBUG_select_LE_I0;
-wire[2-1:0] DEBUG_select_LE_I1;
-wire[2-1:0] DEBUG_select_LE_I2;
-wire[2-1:0] DEBUG_select_LE_I3;
-wire[1-1:0] DEBUG_select_LE_SR;
-wire[1-1:0] DEBUG_select_LE_EN;
-wire[2-1:0] DEBUG_select_LF_I0;
-wire[2-1:0] DEBUG_select_LF_I1;
-wire[2-1:0] DEBUG_select_LF_I2;
-wire[2-1:0] DEBUG_select_LF_I3;
-wire[1-1:0] DEBUG_select_LF_SR;
-wire[1-1:0] DEBUG_select_LF_EN;
-wire[2-1:0] DEBUG_select_LG_I0;
-wire[2-1:0] DEBUG_select_LG_I1;
-wire[2-1:0] DEBUG_select_LG_I2;
-wire[2-1:0] DEBUG_select_LG_I3;
-wire[1-1:0] DEBUG_select_LG_SR;
-wire[1-1:0] DEBUG_select_LG_EN;
-wire[2-1:0] DEBUG_select_LH_I0;
-wire[2-1:0] DEBUG_select_LH_I1;
-wire[2-1:0] DEBUG_select_LH_I2;
-wire[2-1:0] DEBUG_select_LH_I3;
-wire[1-1:0] DEBUG_select_LH_SR;
-wire[1-1:0] DEBUG_select_LH_EN;
-wire[2-1:0] DEBUG_select_S0;
-wire[2-1:0] DEBUG_select_S1;
-wire[2-1:0] DEBUG_select_S2;
-wire[2-1:0] DEBUG_select_S3;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_ABa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_CDa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_EFa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_GHa_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_ABb_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_CDb_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_EFb_BEG3;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG0;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG1;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG2;
-wire[2-1:0] DEBUG_select_J2MID_GHb_BEG3;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG0;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG1;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG2;
-wire[2-1:0] DEBUG_select_J2END_AB_BEG3;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG0;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG1;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG2;
-wire[2-1:0] DEBUG_select_J2END_CD_BEG3;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG0;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG1;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG2;
-wire[2-1:0] DEBUG_select_J2END_EF_BEG3;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG0;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG1;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG2;
-wire[2-1:0] DEBUG_select_J2END_GH_BEG3;
-wire[4-1:0] DEBUG_select_JN2BEG0;
-wire[4-1:0] DEBUG_select_JN2BEG1;
-wire[4-1:0] DEBUG_select_JN2BEG2;
-wire[4-1:0] DEBUG_select_JN2BEG3;
-wire[4-1:0] DEBUG_select_JN2BEG4;
-wire[4-1:0] DEBUG_select_JN2BEG5;
-wire[4-1:0] DEBUG_select_JN2BEG6;
-wire[4-1:0] DEBUG_select_JN2BEG7;
-wire[4-1:0] DEBUG_select_JE2BEG0;
-wire[4-1:0] DEBUG_select_JE2BEG1;
-wire[4-1:0] DEBUG_select_JE2BEG2;
-wire[4-1:0] DEBUG_select_JE2BEG3;
-wire[4-1:0] DEBUG_select_JE2BEG4;
-wire[4-1:0] DEBUG_select_JE2BEG5;
-wire[4-1:0] DEBUG_select_JE2BEG6;
-wire[4-1:0] DEBUG_select_JE2BEG7;
-wire[4-1:0] DEBUG_select_JS2BEG0;
-wire[4-1:0] DEBUG_select_JS2BEG1;
-wire[4-1:0] DEBUG_select_JS2BEG2;
-wire[4-1:0] DEBUG_select_JS2BEG3;
-wire[4-1:0] DEBUG_select_JS2BEG4;
-wire[4-1:0] DEBUG_select_JS2BEG5;
-wire[4-1:0] DEBUG_select_JS2BEG6;
-wire[4-1:0] DEBUG_select_JS2BEG7;
-wire[4-1:0] DEBUG_select_JW2BEG0;
-wire[4-1:0] DEBUG_select_JW2BEG1;
-wire[4-1:0] DEBUG_select_JW2BEG2;
-wire[4-1:0] DEBUG_select_JW2BEG3;
-wire[4-1:0] DEBUG_select_JW2BEG4;
-wire[4-1:0] DEBUG_select_JW2BEG5;
-wire[4-1:0] DEBUG_select_JW2BEG6;
-wire[4-1:0] DEBUG_select_JW2BEG7;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG0;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG1;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG2;
-wire[2-1:0] DEBUG_select_J_l_AB_BEG3;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG0;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG1;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG2;
-wire[2-1:0] DEBUG_select_J_l_CD_BEG3;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG0;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG1;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG2;
-wire[2-1:0] DEBUG_select_J_l_EF_BEG3;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG0;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG1;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG2;
-wire[2-1:0] DEBUG_select_J_l_GH_BEG3;
-wire[3-1:0] DEBUG_select_J_SR_BEG0;
-wire[3-1:0] DEBUG_select_J_EN_BEG0;
+wire[1:0] DEBUG_select_N1BEG0;
+wire[1:0] DEBUG_select_N1BEG1;
+wire[1:0] DEBUG_select_N1BEG2;
+wire[1:0] DEBUG_select_N1BEG3;
+wire[1:0] DEBUG_select_N4BEG0;
+wire[1:0] DEBUG_select_N4BEG1;
+wire[1:0] DEBUG_select_N4BEG2;
+wire[1:0] DEBUG_select_N4BEG3;
+wire[2:0] DEBUG_select_NN4BEG0;
+wire[2:0] DEBUG_select_NN4BEG1;
+wire[2:0] DEBUG_select_NN4BEG2;
+wire[2:0] DEBUG_select_NN4BEG3;
+wire[1:0] DEBUG_select_E1BEG0;
+wire[1:0] DEBUG_select_E1BEG1;
+wire[1:0] DEBUG_select_E1BEG2;
+wire[1:0] DEBUG_select_E1BEG3;
+wire[2:0] DEBUG_select_EE4BEG0;
+wire[2:0] DEBUG_select_EE4BEG1;
+wire[2:0] DEBUG_select_EE4BEG2;
+wire[2:0] DEBUG_select_EE4BEG3;
+wire[3:0] DEBUG_select_E6BEG0;
+wire[3:0] DEBUG_select_E6BEG1;
+wire[1:0] DEBUG_select_S1BEG0;
+wire[1:0] DEBUG_select_S1BEG1;
+wire[1:0] DEBUG_select_S1BEG2;
+wire[1:0] DEBUG_select_S1BEG3;
+wire[1:0] DEBUG_select_S4BEG0;
+wire[1:0] DEBUG_select_S4BEG1;
+wire[1:0] DEBUG_select_S4BEG2;
+wire[1:0] DEBUG_select_S4BEG3;
+wire[2:0] DEBUG_select_SS4BEG0;
+wire[2:0] DEBUG_select_SS4BEG1;
+wire[2:0] DEBUG_select_SS4BEG2;
+wire[2:0] DEBUG_select_SS4BEG3;
+wire[1:0] DEBUG_select_W1BEG0;
+wire[1:0] DEBUG_select_W1BEG1;
+wire[1:0] DEBUG_select_W1BEG2;
+wire[1:0] DEBUG_select_W1BEG3;
+wire[2:0] DEBUG_select_WW4BEG0;
+wire[2:0] DEBUG_select_WW4BEG1;
+wire[2:0] DEBUG_select_WW4BEG2;
+wire[2:0] DEBUG_select_WW4BEG3;
+wire[3:0] DEBUG_select_W6BEG0;
+wire[3:0] DEBUG_select_W6BEG1;
+wire[1:0] DEBUG_select_LA_I0;
+wire[1:0] DEBUG_select_LA_I1;
+wire[1:0] DEBUG_select_LA_I2;
+wire[1:0] DEBUG_select_LA_I3;
+wire[0:0] DEBUG_select_LA_SR;
+wire[0:0] DEBUG_select_LA_EN;
+wire[1:0] DEBUG_select_LB_I0;
+wire[1:0] DEBUG_select_LB_I1;
+wire[1:0] DEBUG_select_LB_I2;
+wire[1:0] DEBUG_select_LB_I3;
+wire[0:0] DEBUG_select_LB_SR;
+wire[0:0] DEBUG_select_LB_EN;
+wire[1:0] DEBUG_select_LC_I0;
+wire[1:0] DEBUG_select_LC_I1;
+wire[1:0] DEBUG_select_LC_I2;
+wire[1:0] DEBUG_select_LC_I3;
+wire[0:0] DEBUG_select_LC_SR;
+wire[0:0] DEBUG_select_LC_EN;
+wire[1:0] DEBUG_select_LD_I0;
+wire[1:0] DEBUG_select_LD_I1;
+wire[1:0] DEBUG_select_LD_I2;
+wire[1:0] DEBUG_select_LD_I3;
+wire[0:0] DEBUG_select_LD_SR;
+wire[0:0] DEBUG_select_LD_EN;
+wire[1:0] DEBUG_select_LE_I0;
+wire[1:0] DEBUG_select_LE_I1;
+wire[1:0] DEBUG_select_LE_I2;
+wire[1:0] DEBUG_select_LE_I3;
+wire[0:0] DEBUG_select_LE_SR;
+wire[0:0] DEBUG_select_LE_EN;
+wire[1:0] DEBUG_select_LF_I0;
+wire[1:0] DEBUG_select_LF_I1;
+wire[1:0] DEBUG_select_LF_I2;
+wire[1:0] DEBUG_select_LF_I3;
+wire[0:0] DEBUG_select_LF_SR;
+wire[0:0] DEBUG_select_LF_EN;
+wire[1:0] DEBUG_select_LG_I0;
+wire[1:0] DEBUG_select_LG_I1;
+wire[1:0] DEBUG_select_LG_I2;
+wire[1:0] DEBUG_select_LG_I3;
+wire[0:0] DEBUG_select_LG_SR;
+wire[0:0] DEBUG_select_LG_EN;
+wire[1:0] DEBUG_select_LH_I0;
+wire[1:0] DEBUG_select_LH_I1;
+wire[1:0] DEBUG_select_LH_I2;
+wire[1:0] DEBUG_select_LH_I3;
+wire[0:0] DEBUG_select_LH_SR;
+wire[0:0] DEBUG_select_LH_EN;
+wire[1:0] DEBUG_select_S0;
+wire[1:0] DEBUG_select_S1;
+wire[1:0] DEBUG_select_S2;
+wire[1:0] DEBUG_select_S3;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG0;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG1;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG2;
+wire[1:0] DEBUG_select_J2MID_ABa_BEG3;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG0;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG1;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG2;
+wire[1:0] DEBUG_select_J2MID_CDa_BEG3;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG0;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG1;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG2;
+wire[1:0] DEBUG_select_J2MID_EFa_BEG3;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG0;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG1;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG2;
+wire[1:0] DEBUG_select_J2MID_GHa_BEG3;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG0;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG1;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG2;
+wire[1:0] DEBUG_select_J2MID_ABb_BEG3;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG0;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG1;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG2;
+wire[1:0] DEBUG_select_J2MID_CDb_BEG3;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG0;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG1;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG2;
+wire[1:0] DEBUG_select_J2MID_EFb_BEG3;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG0;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG1;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG2;
+wire[1:0] DEBUG_select_J2MID_GHb_BEG3;
+wire[1:0] DEBUG_select_J2END_AB_BEG0;
+wire[1:0] DEBUG_select_J2END_AB_BEG1;
+wire[1:0] DEBUG_select_J2END_AB_BEG2;
+wire[1:0] DEBUG_select_J2END_AB_BEG3;
+wire[1:0] DEBUG_select_J2END_CD_BEG0;
+wire[1:0] DEBUG_select_J2END_CD_BEG1;
+wire[1:0] DEBUG_select_J2END_CD_BEG2;
+wire[1:0] DEBUG_select_J2END_CD_BEG3;
+wire[1:0] DEBUG_select_J2END_EF_BEG0;
+wire[1:0] DEBUG_select_J2END_EF_BEG1;
+wire[1:0] DEBUG_select_J2END_EF_BEG2;
+wire[1:0] DEBUG_select_J2END_EF_BEG3;
+wire[1:0] DEBUG_select_J2END_GH_BEG0;
+wire[1:0] DEBUG_select_J2END_GH_BEG1;
+wire[1:0] DEBUG_select_J2END_GH_BEG2;
+wire[1:0] DEBUG_select_J2END_GH_BEG3;
+wire[3:0] DEBUG_select_JN2BEG0;
+wire[3:0] DEBUG_select_JN2BEG1;
+wire[3:0] DEBUG_select_JN2BEG2;
+wire[3:0] DEBUG_select_JN2BEG3;
+wire[3:0] DEBUG_select_JN2BEG4;
+wire[3:0] DEBUG_select_JN2BEG5;
+wire[3:0] DEBUG_select_JN2BEG6;
+wire[3:0] DEBUG_select_JN2BEG7;
+wire[3:0] DEBUG_select_JE2BEG0;
+wire[3:0] DEBUG_select_JE2BEG1;
+wire[3:0] DEBUG_select_JE2BEG2;
+wire[3:0] DEBUG_select_JE2BEG3;
+wire[3:0] DEBUG_select_JE2BEG4;
+wire[3:0] DEBUG_select_JE2BEG5;
+wire[3:0] DEBUG_select_JE2BEG6;
+wire[3:0] DEBUG_select_JE2BEG7;
+wire[3:0] DEBUG_select_JS2BEG0;
+wire[3:0] DEBUG_select_JS2BEG1;
+wire[3:0] DEBUG_select_JS2BEG2;
+wire[3:0] DEBUG_select_JS2BEG3;
+wire[3:0] DEBUG_select_JS2BEG4;
+wire[3:0] DEBUG_select_JS2BEG5;
+wire[3:0] DEBUG_select_JS2BEG6;
+wire[3:0] DEBUG_select_JS2BEG7;
+wire[3:0] DEBUG_select_JW2BEG0;
+wire[3:0] DEBUG_select_JW2BEG1;
+wire[3:0] DEBUG_select_JW2BEG2;
+wire[3:0] DEBUG_select_JW2BEG3;
+wire[3:0] DEBUG_select_JW2BEG4;
+wire[3:0] DEBUG_select_JW2BEG5;
+wire[3:0] DEBUG_select_JW2BEG6;
+wire[3:0] DEBUG_select_JW2BEG7;
+wire[1:0] DEBUG_select_J_l_AB_BEG0;
+wire[1:0] DEBUG_select_J_l_AB_BEG1;
+wire[1:0] DEBUG_select_J_l_AB_BEG2;
+wire[1:0] DEBUG_select_J_l_AB_BEG3;
+wire[1:0] DEBUG_select_J_l_CD_BEG0;
+wire[1:0] DEBUG_select_J_l_CD_BEG1;
+wire[1:0] DEBUG_select_J_l_CD_BEG2;
+wire[1:0] DEBUG_select_J_l_CD_BEG3;
+wire[1:0] DEBUG_select_J_l_EF_BEG0;
+wire[1:0] DEBUG_select_J_l_EF_BEG1;
+wire[1:0] DEBUG_select_J_l_EF_BEG2;
+wire[1:0] DEBUG_select_J_l_EF_BEG3;
+wire[1:0] DEBUG_select_J_l_GH_BEG0;
+wire[1:0] DEBUG_select_J_l_GH_BEG1;
+wire[1:0] DEBUG_select_J_l_GH_BEG2;
+wire[1:0] DEBUG_select_J_l_GH_BEG3;
+wire[2:0] DEBUG_select_J_SR_BEG0;
+wire[2:0] DEBUG_select_J_EN_BEG0;
  //The configuration bits (if any) are just a long shift register
  //This shift register is padded to an even number of flops/latches
  //switch matrix multiplexer N1BEG0 MUX-4
@@ -2021,7 +1940,7 @@ assign LA_Ci = Ci0;
 
  //switch matrix multiplexer LA_SR MUX-2
 assign LA_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LA_SR (
+cus_mux21 inst_cus_mux21_LA_SR (
     .A0(LA_SR_input[0]),
     .A1(LA_SR_input[1]),
     .S(ConfigBits[120+0]),
@@ -2030,7 +1949,7 @@ my_mux2 inst_my_mux2_LA_SR (
 
  //switch matrix multiplexer LA_EN MUX-2
 assign LA_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LA_EN (
+cus_mux21 inst_cus_mux21_LA_EN (
     .A0(LA_EN_input[0]),
     .A1(LA_EN_input[1]),
     .S(ConfigBits[121+0]),
@@ -2098,7 +2017,7 @@ assign LB_Ci = LA_Co;
 
  //switch matrix multiplexer LB_SR MUX-2
 assign LB_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LB_SR (
+cus_mux21 inst_cus_mux21_LB_SR (
     .A0(LB_SR_input[0]),
     .A1(LB_SR_input[1]),
     .S(ConfigBits[130+0]),
@@ -2107,7 +2026,7 @@ my_mux2 inst_my_mux2_LB_SR (
 
  //switch matrix multiplexer LB_EN MUX-2
 assign LB_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LB_EN (
+cus_mux21 inst_cus_mux21_LB_EN (
     .A0(LB_EN_input[0]),
     .A1(LB_EN_input[1]),
     .S(ConfigBits[131+0]),
@@ -2175,7 +2094,7 @@ assign LC_Ci = LB_Co;
 
  //switch matrix multiplexer LC_SR MUX-2
 assign LC_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LC_SR (
+cus_mux21 inst_cus_mux21_LC_SR (
     .A0(LC_SR_input[0]),
     .A1(LC_SR_input[1]),
     .S(ConfigBits[140+0]),
@@ -2184,7 +2103,7 @@ my_mux2 inst_my_mux2_LC_SR (
 
  //switch matrix multiplexer LC_EN MUX-2
 assign LC_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LC_EN (
+cus_mux21 inst_cus_mux21_LC_EN (
     .A0(LC_EN_input[0]),
     .A1(LC_EN_input[1]),
     .S(ConfigBits[141+0]),
@@ -2252,7 +2171,7 @@ assign LD_Ci = LC_Co;
 
  //switch matrix multiplexer LD_SR MUX-2
 assign LD_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LD_SR (
+cus_mux21 inst_cus_mux21_LD_SR (
     .A0(LD_SR_input[0]),
     .A1(LD_SR_input[1]),
     .S(ConfigBits[150+0]),
@@ -2261,7 +2180,7 @@ my_mux2 inst_my_mux2_LD_SR (
 
  //switch matrix multiplexer LD_EN MUX-2
 assign LD_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LD_EN (
+cus_mux21 inst_cus_mux21_LD_EN (
     .A0(LD_EN_input[0]),
     .A1(LD_EN_input[1]),
     .S(ConfigBits[151+0]),
@@ -2329,7 +2248,7 @@ assign LE_Ci = LD_Co;
 
  //switch matrix multiplexer LE_SR MUX-2
 assign LE_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LE_SR (
+cus_mux21 inst_cus_mux21_LE_SR (
     .A0(LE_SR_input[0]),
     .A1(LE_SR_input[1]),
     .S(ConfigBits[160+0]),
@@ -2338,7 +2257,7 @@ my_mux2 inst_my_mux2_LE_SR (
 
  //switch matrix multiplexer LE_EN MUX-2
 assign LE_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LE_EN (
+cus_mux21 inst_cus_mux21_LE_EN (
     .A0(LE_EN_input[0]),
     .A1(LE_EN_input[1]),
     .S(ConfigBits[161+0]),
@@ -2406,7 +2325,7 @@ assign LF_Ci = LE_Co;
 
  //switch matrix multiplexer LF_SR MUX-2
 assign LF_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LF_SR (
+cus_mux21 inst_cus_mux21_LF_SR (
     .A0(LF_SR_input[0]),
     .A1(LF_SR_input[1]),
     .S(ConfigBits[170+0]),
@@ -2415,7 +2334,7 @@ my_mux2 inst_my_mux2_LF_SR (
 
  //switch matrix multiplexer LF_EN MUX-2
 assign LF_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LF_EN (
+cus_mux21 inst_cus_mux21_LF_EN (
     .A0(LF_EN_input[0]),
     .A1(LF_EN_input[1]),
     .S(ConfigBits[171+0]),
@@ -2483,7 +2402,7 @@ assign LG_Ci = LF_Co;
 
  //switch matrix multiplexer LG_SR MUX-2
 assign LG_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LG_SR (
+cus_mux21 inst_cus_mux21_LG_SR (
     .A0(LG_SR_input[0]),
     .A1(LG_SR_input[1]),
     .S(ConfigBits[180+0]),
@@ -2492,7 +2411,7 @@ my_mux2 inst_my_mux2_LG_SR (
 
  //switch matrix multiplexer LG_EN MUX-2
 assign LG_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LG_EN (
+cus_mux21 inst_cus_mux21_LG_EN (
     .A0(LG_EN_input[0]),
     .A1(LG_EN_input[1]),
     .S(ConfigBits[181+0]),
@@ -2560,7 +2479,7 @@ assign LH_Ci = LG_Co;
 
  //switch matrix multiplexer LH_SR MUX-2
 assign LH_SR_input = {J_SR_END0,GND0};
-my_mux2 inst_my_mux2_LH_SR (
+cus_mux21 inst_cus_mux21_LH_SR (
     .A0(LH_SR_input[0]),
     .A1(LH_SR_input[1]),
     .S(ConfigBits[190+0]),
@@ -2569,7 +2488,7 @@ my_mux2 inst_my_mux2_LH_SR (
 
  //switch matrix multiplexer LH_EN MUX-2
 assign LH_EN_input = {J_EN_END0,VCC0};
-my_mux2 inst_my_mux2_LH_EN (
+cus_mux21 inst_cus_mux21_LH_EN (
     .A0(LH_EN_input[0]),
     .A1(LH_EN_input[1]),
     .S(ConfigBits[191+0]),

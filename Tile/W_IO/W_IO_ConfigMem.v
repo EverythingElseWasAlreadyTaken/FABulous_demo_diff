@@ -14,10 +14,6 @@ module W_IO_ConfigMem
         output [NoConfigBits - 1:0] ConfigBits_N
     );
 
-wire[32-1:0] frame0;
-wire[32-1:0] frame1;
-wire[32-1:0] frame2;
-wire[18-1:0] frame3;
 `ifdef EMULATION
 assign ConfigBits[113] = Emulate_Bitstream[31];
 assign ConfigBits[112] = Emulate_Bitstream[30];
